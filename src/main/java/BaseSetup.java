@@ -1,5 +1,5 @@
-import org.junit.After;
-import org.junit.Before;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -7,21 +7,20 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseSetup {
 
-    private WebDriver driver;
+    private static WebDriver driver;
 
     static String driverPath = "C:\\Program Files (x86)\\Google\\Chrome\\";
     static String Url = "https://www.olx.ua/";
 
-    public WebDriver getDriver() {
+    public static WebDriver getDriver() {
         return driver;
     }
 
-
-    public void setDriver(String Url) {
+    private static void setDriver(String Url) {
         driver = initChromeDriver(Url);
     }
 
-    public static WebDriver initChromeDriver(String Url) {
+    private static WebDriver initChromeDriver(String Url) {
         System.out.println("Launching google chrome with new profile..");
         System.setProperty("webdriver.chrome.driver", driverPath
                 + "chromedriver.exe");
@@ -32,8 +31,8 @@ public class BaseSetup {
         return driver;
     }
 
-    @Before
-    public void initializeTestBaseSetup() {
+    @BeforeClass
+    public static void initializeTestBaseSetup() {
         try {
             setDriver(Url);
 
@@ -42,9 +41,8 @@ public class BaseSetup {
         }
     }
 
-
-    @After
-    public void tearDown() {
+    @AfterClass
+    public static void tearDown() {
         driver.manage().deleteAllCookies();
         driver.quit();
     }
