@@ -43,7 +43,6 @@ public class BaseSetup {
 
     @AfterClass
     public static void tearDown() {
-        driver.manage().deleteAllCookies();
         driver.quit();
     }
 }

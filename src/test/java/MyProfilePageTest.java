@@ -16,7 +16,7 @@ public class MyProfilePageTest extends BaseSetup {
     }
 
     @Test
-    public void myProfileOpen() {
+    public void myProfileOpenTest() {
 
         mainPage = new MainPage(driver);
 
@@ -33,7 +33,18 @@ public class MyProfilePageTest extends BaseSetup {
 
         System.out.println("\nmyProfile Facebook Button Present test started");
         MyProfilePage myProfilePage = mainPage.clickMyProfileLink();
-        Assert.assertTrue("not", myProfilePage.verifyFacebookLogInButtonPresent());
+        Assert.assertTrue("Facebook button is absent", myProfilePage.verifyFacebookLogInButtonPresent());
         System.out.println("MyProfile Facebook Button Present test has been completed.\n");
+    }
+
+    @Test
+    public void myProfileValidationVerification() {
+
+        mainPage = new MainPage(driver);
+
+        System.out.println("\nMy Profile Validation Verification test started");
+        MyProfilePage myProfilePage = mainPage.clickMyProfileLink();
+        Assert.assertTrue("Validation is missing.", myProfilePage.verifyMyProfileValidation());
+        System.out.println("My Profile Validation Verification test has been completed.\n");
     }
 }
