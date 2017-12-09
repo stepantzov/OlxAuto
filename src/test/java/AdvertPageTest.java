@@ -1,12 +1,16 @@
+import coreFunctions.BaseSetup;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import pages.AdvertPage;
+import pages.MainPage;
 
 public class AdvertPageTest extends BaseSetup {
 
     private static WebDriver driver;
     private MainPage mainPage;
+
 
     @BeforeClass
     public static void setUp() {
@@ -19,7 +23,7 @@ public class AdvertPageTest extends BaseSetup {
         mainPage = new MainPage(driver);
 
         System.out.println("\n Advert Page Title test has started. ");
-        AdvertPage myAdvertPage = mainPage.clickAddNewAdvert();
+        AdvertPage myAdvertPage = mainPage.getAdvertPageAfterLogin();
         Assert.assertTrue("No text present.", myAdvertPage.verifyAdvertPageText());
         System.out.println("\n Advert Page Title test has been completed.");
     }

@@ -1,9 +1,10 @@
-import org.openqa.selenium.By;
+package pages;
+
+import coreFunctions.WebSelectors;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class AdvertPage {
-    private By advertPageTextTitle = By.xpath("//h1[@class='c000 x-large pding10 rel fleft']");
+public class AdvertPage extends WebSelectors {
 
     private WebDriver driver;
 
@@ -12,7 +13,7 @@ public class AdvertPage {
     }
 
     public boolean verifyAdvertPageText() {
-        WebElement myAdvertPageTextTitle = driver.findElement(advertPageTextTitle);
+        WebElement myAdvertPageTextTitle = getElement("//h1[@class='c000 x-large pding10 rel fleft']", 60, XPATH);
         String advertPageTitleText = myAdvertPageTextTitle.getText();
         String expectedText = "Подать бесплатное объявление на OLX";
 

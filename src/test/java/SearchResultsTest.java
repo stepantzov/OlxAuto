@@ -1,7 +1,10 @@
+import coreFunctions.BaseSetup;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import pages.MainPage;
+import pages.SearchResultsPage;
 
 public class SearchResultsTest extends BaseSetup {
 
