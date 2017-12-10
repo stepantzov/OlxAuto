@@ -22,7 +22,7 @@ public class SearchResultsTest extends BaseSetup {
 
         mainPage = new MainPage(driver);
 
-        SearchResultsPage mySearchResultsPage = mainPage.getSearchResults("Ваз 2103");
+        SearchResultsPage mySearchResultsPage = mainPage.getSearchResultsPage("Ваз 2103");
         mySearchResultsPage.closePopUp();
         String results = mySearchResultsPage.getSearchResultsCountText();
         Assert.assertTrue("No results present.", results.contains("Найдено"));

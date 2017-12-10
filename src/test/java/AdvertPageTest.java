@@ -18,13 +18,13 @@ public class AdvertPageTest extends BaseSetup {
     }
 
     @Test
-    public void advertPageTitleTest() {
+    public void getAdvertPageTest() {
 
         mainPage = new MainPage(driver);
 
-        System.out.println("\n Advert Page Title test has started. ");
+        System.out.println("\n getAdvertPage test has started. ");
         AdvertPage myAdvertPage = mainPage.getAdvertPageAfterLogin();
         Assert.assertTrue("No text present.", myAdvertPage.verifyAdvertPageText());
-        System.out.println("\n Advert Page Title test has been completed.");
+        System.out.println("\n getAdvertPage test has been completed.");
     }
 }

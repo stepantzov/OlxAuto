@@ -1,3 +1,5 @@
+package coreFunctions;
+
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
@@ -7,10 +9,9 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseSetup {
 
-    private static WebDriver driver;
-
     static String driverPath = "C:\\Program Files (x86)\\Google\\Chrome\\";
     static String Url = "https://www.olx.ua/";
+    public static WebDriver driver;
 
     public static WebDriver getDriver() {
         return driver;
