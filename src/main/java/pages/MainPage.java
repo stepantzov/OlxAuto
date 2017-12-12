@@ -1,80 +1,38 @@
 package pages;
 
-import coreFunctions.WebSelectors;
+import coreFunctions.OlxWebElementsSetup;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
-public class MainPage extends WebSelectors {
+public class MainPage extends OlxWebElementsSetup {
 
     protected static WebDriver driver;
-    protected static final int DELAY = 30;
-
-    private String login = "stepantov@gmail.com";
-    private String password = "123ZZror";
 
     public MainPage(WebDriver driver) {
-
         this.driver = driver;
     }
 
-    public static void clickMyProfileLink() {
-        WebElement myProfileLink = WebSelectors.getElement("//*[@id='topLoginLink']/span/strong", DELAY, XPATH);
-        myProfileLink.click();
+    public static WebElement myProfileLink() {
+        return getElement("//*[@id='topLoginLink']/span/strong", DELAY, XPATH);
     }
 
-    public SearchResultsPage getSearchResultsPage(String keyWord, String localization) {
-        WebElement mySearchButton = WebSelectors.getElement("//*[@id='submit-searchmain']", DELAY, XPATH);
-        WebElement mySearchField = WebSelectors.getElement("//*[@id='headerSearch']", DELAY, XPATH);
-        WebElement mySearchLocalization = WebSelectors.getElement("//*[@id='cityField']", DELAY, XPATH);
-
-        mySearchField.sendKeys(keyWord);
-        mySearchLocalization.sendKeys(localization);
-        mySearchButton.click();
-
-        return new SearchResultsPage(driver);
+    public WebElement mySearchButton() {
+        return getElement("//*[@id='submit-searchmain']", DELAY, XPATH);
     }
 
-    public SearchResultsPage getSearchResultsPage(String keyWord) {
-
-        WebElement mySearchButton = WebSelectors.getElement("//*[@id='submit-searchmain']", DELAY, XPATH);
-        WebElement mySearchField = WebSelectors.getElement("//*[@id='headerSearch']", DELAY, XPATH);
-        WebElement mySearchLocalization = WebSelectors.getElement("//*[@id='cityField']", DELAY, XPATH);
-
-        mySearchField.sendKeys(keyWord);
-        mySearchButton.click();
-
-        return new SearchResultsPage(driver);
+    public WebElement mySearchField() {
+        return getElement("//*[@id='headerSearch']", DELAY, XPATH);
     }
 
-    public static void login(String login, String password) {
-        WebElement enterButtonElement = WebSelectors.getElement("//*[@id='se_userLogin']", DELAY, XPATH);
-        WebElement loginEmail = WebSelectors.getElement("//*[@id='userEmail']", DELAY, XPATH);
-        WebElement passwordEnter = WebSelectors.getElement("//*[@id='userPass']", DELAY, XPATH);
-
-        loginEmail.sendKeys(login);
-        passwordEnter.sendKeys(password);
-        enterButtonElement.click();
+    public WebElement mySearchLocalizationField() {
+        return getElement("//*[@id='cityField']", DELAY, XPATH);
     }
 
-    public static void logout(){
-
+    public WebElement addNewAdvertLink() {
+        return getElement("//*[@id='postNewAdLink']", DELAY, XPATH);
     }
 
-    public AdvertPage getAdvertPageAfterLogin() {
-        WebElement addNewAdvertLink = WebSelectors.getElement("//*[@id='postNewAdLink']", DELAY, XPATH);
-        addNewAdvertLink.click();
-        login(login, password);
-
-        return new AdvertPage(driver);
-    }
-
-    public static MyProfileSettingsPage openMyProfileSettings() {
-        Actions action = new Actions(driver);
-        WebElement myProfileLink = WebSelectors.getElement(".//*[@id='topLoginLink']/span/strong", DELAY, XPATH);
-        action.moveToElement(myProfileLink).moveToElement(WebSelectors.
-                getElement(".//*[@id='login-box-settings']/span", DELAY, XPATH)).click().build().perform();
-
-        return new MyProfileSettingsPage(driver);
+    public WebElement myLoggedOnUserProfileLink() {
+        return getElement(".//*[@id='topLoginLink']/span/strong", DELAY, XPATH);
     }
 }

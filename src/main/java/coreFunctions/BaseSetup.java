@@ -5,16 +5,19 @@ import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.util.concurrent.TimeUnit;
-
 public class BaseSetup {
 
     static String driverPath = "C:\\Program Files (x86)\\Google\\Chrome\\";
     static String Url = "https://www.olx.ua/";
     public static WebDriver driver;
 
-    public static WebDriver getDriver() {
+    protected static final int DELAY = 10;
+    protected static final int IMPLICITDELAY = 30;
 
+    public static String login = "stepantov@gmail.com";
+    public static String password = "123ZZror";
+
+    public static WebDriver getDriver() {
         return driver;
     }
 
@@ -27,7 +30,7 @@ public class BaseSetup {
         System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        OlxWebElementsSetup.setImplicitWaitTime(3);
         driver.navigate().to(Url);
 
         return driver;

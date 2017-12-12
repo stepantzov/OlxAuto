@@ -1,16 +1,16 @@
+import actionsVetification.AdvertPageActionsVerify;
 import coreFunctions.BaseSetup;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import pages.AdvertPage;
+import pageActions.MainPageActions;
 import pages.MainPage;
 
-public class AdvertPageTest extends BaseSetup {
+public class AdvertPageActionsTest extends BaseSetup {
 
     private static WebDriver driver;
     private MainPage mainPage;
-
 
     @BeforeClass
     public static void setUp() {
@@ -23,8 +23,8 @@ public class AdvertPageTest extends BaseSetup {
         mainPage = new MainPage(driver);
 
         System.out.println("\n getAdvertPage test has started. ");
-        AdvertPage myAdvertPage = mainPage.getAdvertPageAfterLogin();
-        Assert.assertTrue("No text present.", myAdvertPage.verifyAdvertPageText());
+        AdvertPageActionsVerify myAdvertPageActions = mainPage.getAdvertPageAfterLogin();
+        Assert.assertTrue("No text present.", myAdvertPageActions.verifyAdvertPageText());
         System.out.println("\n getAdvertPage test has been completed.");
     }
 }
