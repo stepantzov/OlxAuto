@@ -10,8 +10,10 @@ public class MainPageActions extends MainPage {
     private WebDriver driver;
     private static String login = "stepantzov@gmail.com";
     private static String password = "123ZZror";
+    protected static final int DELAY = 30;
 
     public MainPageActions(WebDriver driver) {
+
         super(driver);
     }
 
@@ -19,10 +21,11 @@ public class MainPageActions extends MainPage {
         MainPage.clickMyProfileLink();
         System.out.println("Checking if Facebook button is present.");
 
-        return ((WebSelectors.getElement("//*[@id='fblogin']", 30, XPATH)).isDisplayed());
+        return ((WebSelectors.getElement("//*[@id='fblogin']", DELAY, XPATH)).isDisplayed());
     }
 
     public static Boolean verifyLoginSuccessfully() {
+        MainPage.clickMyProfileLink();
         MainPage.login(login, password);
 
         return ((WebSelectors.getElement(".//*[@id='usertabs']//*[@class='x-large fbold lheight20']",
@@ -30,10 +33,12 @@ public class MainPageActions extends MainPage {
     }
 
     public static Boolean verifyLoginValidation() {
-        WebElement enterButtonElement = WebSelectors.getElement("//*[@id='se_userLogin']", 30, XPATH);
+        //need to add log out here
+        MainPage.clickMyProfileLink();
+        WebElement enterButtonElement = WebSelectors.getElement("//*[@id='se_userLogin']", DELAY, XPATH);
         enterButtonElement.click();
-        WebElement loginValidation = WebSelectors.getElement("//label[@for='userEmail']", 30, XPATH);
-        WebElement passwordValidation = WebSelectors.getElement("//label[@for='userPass']", 30, XPATH);
+        WebElement loginValidation = WebSelectors.getElement("//label[@for='userEmail']", DELAY, XPATH);
+        WebElement passwordValidation = WebSelectors.getElement("//label[@for='userPass']", DELAY, XPATH);
 
         return (loginValidation.isDisplayed() || passwordValidation.isDisplayed());
     }
@@ -41,6 +46,6 @@ public class MainPageActions extends MainPage {
     public static Boolean verifyOpenMyProfileSettings() {
         MainPage.openMyProfileSettings();
 
-        return (WebSelectors.getElement(".//*[@id='se_deleteAccount']/span", 30, XPATH).isDisplayed());
+        return (WebSelectors.getElement(".//*[@id='se_deleteAccount']/span", DELAY, XPATH).isDisplayed());
     }
 }

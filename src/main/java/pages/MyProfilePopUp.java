@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 
 public class MyProfilePopUp extends WebSelectors {
 
+    protected static final int DELAY = 30;
     private static WebDriver driver;
 
     public MyProfilePopUp(WebDriver driver) {
@@ -13,7 +14,7 @@ public class MyProfilePopUp extends WebSelectors {
     }
 
     public String getMyProfilePageText() {
-        WebElement element = WebSelectors.getElement("//*[@id='login_tab']", 30, XPATH);
+        WebElement element = WebSelectors.getElement("//*[@id='login_tab']", DELAY, XPATH);
 
         return (element.getText());
     }

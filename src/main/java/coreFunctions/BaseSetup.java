@@ -14,6 +14,7 @@ public class BaseSetup {
     public static WebDriver driver;
 
     public static WebDriver getDriver() {
+
         return driver;
     }
 
@@ -23,12 +24,12 @@ public class BaseSetup {
 
     private static WebDriver initChromeDriver(String Url) {
         System.out.println("Launching google chrome with new profile..");
-        System.setProperty("webdriver.chrome.driver", driverPath
-                + "chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.navigate().to(Url);
+
         return driver;
     }
 

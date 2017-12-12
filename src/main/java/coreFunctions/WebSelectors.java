@@ -10,12 +10,13 @@ public class WebSelectors extends BaseSetup {
     protected static final Object CSS = "css";
 
     public static WebElement getElement(String selector, int timeWaiting, String typeSelector) {
-        return new WebDriverWait(BaseSetup.driver, waiting(timeWaiting, 30)).until(ExpectedConditions.
-                presenceOfElementLocated(bySelector(selector,
-                        typeSelector)));
+
+        return new WebDriverWait(BaseSetup.driver, waiting(timeWaiting, 30)).
+                until(ExpectedConditions.presenceOfElementLocated(bySelector(selector, typeSelector)));
     }
 
     private static By bySelector(String selector, String typeSelector) {
+
         return XPATH.equals(type(typeSelector)) ? By.xpath(selector) : By.cssSelector(selector);
     }
 
@@ -25,6 +26,7 @@ public class WebSelectors extends BaseSetup {
         if (!XPATH.equals(type) && !CSS.equals(type)) {
             type = XPATH;
         }
+
         return type;
     }
 
@@ -34,6 +36,7 @@ public class WebSelectors extends BaseSetup {
         if (waiting == 0) {
             waiting = defaultDelay;
         }
+
         return waiting;
     }
 }
