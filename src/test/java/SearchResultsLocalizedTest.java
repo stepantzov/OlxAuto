@@ -1,5 +1,4 @@
 import coreFunctions.DriverSetup;
-import externalDictionary.ExternalDictionary;
 import externalDictionary.SearchParametersFactory;
 import org.junit.After;
 import org.junit.Assert;
@@ -10,7 +9,9 @@ import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 import pageActions.MainPageActions;
 import pageActions.SearchResultsPageActions;
-import java.util.List;
+
+import java.util.Arrays;
+import java.util.Collection;
 
 @RunWith(Parameterized.class)
 public class SearchResultsLocalizedTest extends DriverSetup {
@@ -19,12 +20,19 @@ public class SearchResultsLocalizedTest extends DriverSetup {
 
     @Parameterized.Parameter(0)
     public String searchKeyword;
+    @Parameterized.Parameter(1)
+    public String searchLocale;
 
     @Parameterized.Parameters
-    public static List dataNotLocalized() {
+    public static Collection<Object[]> dataNotLocalized() {
         SearchParametersFactory searchParametersFactory = new SearchParametersFactory();
-        ExternalDictionary externalDictionaryNotLocalized = searchParametersFactory.getDictionary("PARAMETERSLOCALIZED");
-        return (externalDictionaryNotLocalized.getSearchParameter());
+        Object[][] data = null;
+        for (int i = 0; i < 9; i++)
+            for (int j = 0; j < 9; j++) {
+                data[i][j] = new Object[][]{{searchParametersFactory.getDictionary("PARAMETERSNOTLOCALIZED").getSearchParameter().get(i),
+                        searchParametersFactory.getDictionary("PARAMETERSLOCALIZED").getSearchParameter().get(j)}};
+            }
+        return Arrays.asList(data);
     }
 
     @BeforeClass
@@ -43,7 +51,7 @@ public class SearchResultsLocalizedTest extends DriverSetup {
 
         System.out.println("Search Results Localized test test started");
         mainPageActions.setSearchFieldVal(searchKeyword);
-        mainPageActions.setSearchLocalizationVal(searchKeyword);
+        mainPageActions.setSearchLocalizationVal(searchLocale);
 
         mainPageActions.clickGeoSuggestion();
         mainPageActions.pressSearchButton();

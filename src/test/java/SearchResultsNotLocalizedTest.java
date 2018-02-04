@@ -24,7 +24,8 @@ public class SearchResultsNotLocalizedTest extends DriverSetup {
     public static List dataNotLocalized() {
         SearchParametersFactory searchParametersFactory = new SearchParametersFactory();
         ExternalDictionary externalDictionaryNotLocalized = searchParametersFactory.getDictionary("PARAMETERSNOTLOCALIZED");
-        return (externalDictionaryNotLocalized.getSearchParameter());
+
+        return externalDictionaryNotLocalized.getSearchParameter();
     }
 
     @BeforeClass
