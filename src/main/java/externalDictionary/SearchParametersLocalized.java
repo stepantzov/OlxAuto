@@ -14,6 +14,6 @@ public class SearchParametersLocalized implements ExternalDictionary {
                 returnItems.add(items.get(i));
             }
         }
-        return items;
+        return returnItems;
     }
 }

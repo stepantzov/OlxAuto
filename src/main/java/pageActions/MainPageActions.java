@@ -45,9 +45,13 @@ public class MainPageActions extends MainPage {
         return new MyProfileSettingsPageActions(driver);
     }
 
+    public void clearLocalization(){
+        elementClick(clickClearLocalization());
+    }
+
     public void setSearchLocalizationVal(String searchLocalizationVal) {
         sendKeys(mySearchLocalizationField(), searchLocalizationVal);
-        setImplicitWaitTime(1111);
+//        setImplicitWaitTime(1111);
     }
 
     public void clickGeoSuggestion() {

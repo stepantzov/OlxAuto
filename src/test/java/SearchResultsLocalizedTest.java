@@ -26,12 +26,14 @@ public class SearchResultsLocalizedTest extends DriverSetup {
     @Parameterized.Parameters
     public static Collection<Object[]> dataNotLocalized() {
         SearchParametersFactory searchParametersFactory = new SearchParametersFactory();
-        Object[][] data = null;
-        for (int i = 0; i < 9; i++)
-            for (int j = 0; j < 9; j++) {
-                data[i][j] = new Object[][]{{searchParametersFactory.getDictionary("PARAMETERSNOTLOCALIZED").getSearchParameter().get(i),
-                        searchParametersFactory.getDictionary("PARAMETERSLOCALIZED").getSearchParameter().get(j)}};
-            }
+        Object[][] data = new Object[9][2];
+        for (int i = 0; i < data.length; i++) {
+            data[i][0] = searchParametersFactory.getDictionary("PARAMETERSNOTLOCALIZED").getSearchParameter().get(i);
+        }
+        for (int j = 0; j < data.length; j++) {
+            data[j][1] = searchParametersFactory.getDictionary("PARAMETERSLOCALIZED").getSearchParameter().get(j);
+        }
+
         return Arrays.asList(data);
     }
 
@@ -50,10 +52,10 @@ public class SearchResultsLocalizedTest extends DriverSetup {
         mainPageActions = new MainPageActions(driver);
 
         System.out.println("Search Results Localized test test started");
+        mainPageActions.clearLocalization();
         mainPageActions.setSearchFieldVal(searchKeyword);
         mainPageActions.setSearchLocalizationVal(searchLocale);
 
-        mainPageActions.clickGeoSuggestion();
         mainPageActions.pressSearchButton();
 
         SearchResultsPageActions.pressClosePopUpButton();

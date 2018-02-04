@@ -32,4 +32,8 @@ public class MainPage extends ActionsSetup {
     public WebElement homePageLogo() {
         return getElement("//a[@href='https://www.olx.ua']", DELAY, XPATH);
     }
+
+    public WebElement clickClearLocalization() {
+        return getElement("//a[@class='clear-input-button']", DELAY, XPATH);
+    }
 }
