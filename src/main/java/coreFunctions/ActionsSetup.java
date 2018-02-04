@@ -8,24 +8,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
-public class OlxWebElementsSetup extends BaseSetup {
-    protected static final String XPATH = "xpath";
-    protected static final Object CSS = "css";
-
+public class ActionsSetup extends DriverSetup {
     public static WebElement getElement(String selector, int timeWaiting, String typeSelector) {
-
-        return new WebDriverWait(BaseSetup.driver, setTimeWaiting(timeWaiting, DELAY)).
+        return new WebDriverWait(DriverSetup.driver, setTimeWaiting(timeWaiting, DELAY)).
                 until(ExpectedConditions.presenceOfElementLocated(bySelector(selector, typeSelector)));
     }
 
     private static By bySelector(String selector, String typeSelector) {
-
         return XPATH.equals(type(typeSelector)) ? By.xpath(selector) : By.cssSelector(selector);
     }
 
     private static String type(String typeSelector) {
         String type = typeSelector;
-
         if (!XPATH.equals(type) && !CSS.equals(type)) {
             type = XPATH;
         }
@@ -35,22 +29,20 @@ public class OlxWebElementsSetup extends BaseSetup {
 
     private static int setTimeWaiting(int timeWaiting, int defaultDelay) {
         int waitingTime = timeWaiting;
-
         if (waitingTime == 0) {
             waitingTime = defaultDelay;
         }
         return waitingTime;
     }
 
-    public static void setImplicitWaitTime(int explicitDelay) {
-        driver.manage().timeouts().implicitlyWait(explicitDelay, TimeUnit.SECONDS);
+    public static void setImplicitWaitTime(int implicitWaitTime) {
+        driver.manage().timeouts().implicitlyWait(implicitWaitTime, TimeUnit.SECONDS);
     }
 
     public static String getText(WebElement element) {
         setImplicitWaitTime(IMPLICITDELAY);
         return element.getText();
     }
-
 
     public static void elementClick(WebElement element) {
         setImplicitWaitTime(IMPLICITDELAY);

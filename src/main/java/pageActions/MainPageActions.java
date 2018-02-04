@@ -1,57 +1,60 @@
 package pageActions;
 
-import actionsVetification.AdvertPageActionsVerify;
-import coreFunctions.OlxWebElementsSetup;
 import org.openqa.selenium.WebDriver;
-import pages.*;
+import pages.MainPage;
+import pages.MyProfilePage;
 
 public class MainPageActions extends MainPage {
+    protected static WebDriver driver;
+
     public MainPageActions(WebDriver driver) {
-        super(driver);
+        this.driver = driver;
     }
 
-    public static void clickMyProfileLink() {
-        OlxWebElementsSetup.elementClick(myProfileLink());
+    public static void clickMyProfileLnk() {
+        elementClick(myProfileLink());
     }
 
-    public void setSearchFieldValue(String fieldValue) {
-        OlxWebElementsSetup.sendKeys(mySearchField(), fieldValue);
+    public void setSearchFieldVal(String fieldValue) {
+        sendKeys(mySearchField(), fieldValue);
     }
 
-    public void setSearchLocalizationValue(String fieldValue) {
-        OlxWebElementsSetup.sendKeys(mySearchLocalizationField(), fieldValue);
+    public AdvertPageActions pressAddNewAdvertLnk() {
+        elementClick(addNewAdvertLnk());
+
+        return new AdvertPageActions(driver);
     }
 
-    public void clickSearchButton() {
-        OlxWebElementsSetup.elementClick(mySearchButton());
-    }
-
-    public void pressAddNewAdvertLink() {
-        OlxWebElementsSetup.elementClick(addNewAdvertLink());
+    public void pressMyProfileLnk() {
+        elementClick(myProfileLink());
     }
 
     public static void logout() {
-//to be implemented
+/* TODO implement log out action */
     }
 
-    public AdvertPageActionsVerify getAdvertPageAfterLogin() {
-        pressAddNewAdvertLink();
-        LoginPageActions.loginOlx(login, password);
+    public SearchResultsPageActions pressSearchButton() {
+        elementClick(mySearchButton());
 
-        return new AdvertPageActionsVerify(driver);
+        return new SearchResultsPageActions(driver);
     }
 
-    public SearchResultsPage getSearchResultsPage(String keyWord, String localization) {
-        setSearchFieldValue(keyWord);
-        setSearchLocalizationValue(localization);
-        clickSearchButton();
-        return new SearchResultsPage(driver);
+    public static MyProfileSettingsPageActions openMyProfileSettings() {
+        hoverOver(myProfileLink(), MyProfilePage.myProfileSettingsLnk());
+
+        return new MyProfileSettingsPageActions(driver);
     }
 
-    public static MyProfileSettingsPage openMyProfileSettings() {
-        LoginPageActions.loginOlx(login, password);
-        MainPageActions.hoverOver(myProfileLink(), MyProfilePage.myProfileSettings());
+    public void setSearchLocalizationVal(String searchLocalizationVal) {
+        sendKeys(mySearchLocalizationField(), searchLocalizationVal);
+        setImplicitWaitTime(1111);
+    }
 
-        return new MyProfileSettingsPage(driver);
+    public void clickGeoSuggestion() {
+        elementClick(myGeoSuggestion());
+    }
+
+    public void navigateHomePage() {
+        elementClick(homePageLogo());
     }
 }

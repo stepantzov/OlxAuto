@@ -1,18 +1,11 @@
 package pages;
 
-import coreFunctions.OlxWebElementsSetup;
-import org.openqa.selenium.WebDriver;
+import coreFunctions.ActionsSetup;
 import org.openqa.selenium.WebElement;
 
-public class AdvertPage extends OlxWebElementsSetup {
+public class AdvertPage extends ActionsSetup {
 
-    protected static WebDriver driver;
-
-    public AdvertPage(WebDriver driver) {
-        this.driver = driver;
-    }
-
-    public WebElement advertPageTitle() {
+    public static WebElement advertPageTitle() {
         return getElement("//h1[@class='c000 x-large pding10 rel fleft']", DELAY, XPATH);
     }
 }

@@ -1,10 +1,10 @@
 package pages;
 
-import coreFunctions.OlxWebElementsSetup;
+import coreFunctions.ActionsSetup;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class MyProfileSettingsPage extends OlxWebElementsSetup {
+public class MyProfileSettingsPage extends ActionsSetup {
     protected WebDriver driver;
 
     public MyProfileSettingsPage(WebDriver driver) {

@@ -1,6 +1,6 @@
 package pageActions;
 
-import coreFunctions.OlxWebElementsSetup;
+import coreFunctions.ActionsSetup;
 import org.openqa.selenium.WebDriver;
 import pages.MyProfilePage;
 
@@ -10,6 +10,6 @@ public class MyProfilePageActions extends MyProfilePage {
     }
 
     public String getMyProfilePageText() {
-        return OlxWebElementsSetup.getText(myProfilePageHeaderText());
+        return ActionsSetup.getText(myProfilePageHeaderText());
     }
 }

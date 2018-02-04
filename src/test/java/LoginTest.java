@@ -1,51 +1,53 @@
-import coreFunctions.BaseSetup;
+import coreFunctions.DriverSetup;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import actionsVetification.MainPageActionsVerify;
+import pageActions.LoginPageActions;
+import pageActions.MainPageActions;
+import pages.LoginPage;
+import pages.MyProfilePage;
 
-public class LoginTest extends BaseSetup {
-
+public class LoginTest extends DriverSetup {
     private static WebDriver driver;
-    private MainPageActionsVerify mainPageActions;
-
-    private String login = "stepantzov@gmail.com";
-    private String password = "123ZZror";
+    private MainPageActions mainPageActions;
 
     @BeforeClass
     public static void setUp() {
-        driver = getDriver(); //can driver be static actually????
+        driver = getDriver();
     }
 
     @Test
     public void myProfileFacebookButtonPresent() {
-
-        mainPageActions = new MainPageActionsVerify(driver);
+        mainPageActions = new MainPageActions(driver);
+        mainPageActions.pressMyProfileLnk();
 
         System.out.println("\nmyProfile Facebook Button Present test started");
-        Assert.assertTrue("Facebook button is absent", mainPageActions.verifyFacebookLoginButtonPresent());
+        Assert.assertTrue("Facebook button is absent", LoginPage.facebookBtn().isDisplayed());
         System.out.println("MyProfile Facebook Button Present test has been completed.\n");
     }
 
     @Test
     public void myProfileValidationVerification() {
-//need to add logOutHere
-        mainPageActions = new MainPageActionsVerify(driver);
+        mainPageActions = new MainPageActions(driver);
+        mainPageActions.pressMyProfileLnk();
 
         System.out.println("\nMy Profile Validation Verification test started");
-
-        Assert.assertTrue("Validation is missing.", mainPageActions.verifyLoginValidation());
+        LoginPageActions.pressLoginButton();
+        Assert.assertTrue("Login validation is absent", LoginPage.loginValidationAlrt().isDisplayed());
+        Assert.assertTrue("Password validation is absent", LoginPage.passwordValidationAlrt().isDisplayed());
         System.out.println("My Profile Validation Verification test has been completed.\n");
     }
 
-    @Test //login is just an atomic method it need to be run with another Myprofile related methods
-    public void myProfileLoginTest() {
-
-        mainPageActions = new MainPageActionsVerify(driver);
+    @Test
+    public void myProfileLoginSuccessfullTest() {
+        mainPageActions = new MainPageActions(driver);
+        mainPageActions.pressMyProfileLnk();
 
         System.out.println("myProfileLoginTest test started");
-        Assert.assertTrue("Can't log in successfully", mainPageActions.verifyLoginSuccessfully());
+        LoginPageActions.loginOlx(LOGIN, PASSWORD);
+        Assert.assertTrue("Can't log in successfully", MyProfilePage.myProfileActiveAdvTitle().isDisplayed());
+        LoginPageActions.logOutOlx();
         System.out.println("myProfileLoginTest test has been completed.\n");
     }
 }

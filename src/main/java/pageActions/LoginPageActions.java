@@ -1,31 +1,36 @@
 package pageActions;
 
-import coreFunctions.OlxWebElementsSetup;
 import org.openqa.selenium.WebDriver;
 import pages.LoginPage;
+import pages.MyProfilePage;
+
+import static pages.MainPage.myProfileLink;
 
 public class LoginPageActions extends LoginPage {
-
     public LoginPageActions(WebDriver driver) {
         super(driver);
     }
 
     public static void setLoginEnterField(String loginValue) {
-        OlxWebElementsSetup.sendKeys(loginEnterField(), loginValue);
+        sendKeys(loginEnterFld(), loginValue);
     }
 
     public static void setPasswordEnterField(String passwordValue) {
-        OlxWebElementsSetup.sendKeys(passwordEnterField(), passwordValue);
+        sendKeys(passwordEnterFld(), passwordValue);
     }
 
     public static void pressLoginButton() {
-        OlxWebElementsSetup.elementClick(enterButton());
+        elementClick(enterBtn());
     }
 
     public static void loginOlx(String login, String password) {
-        MainPageActions.clickMyProfileLink();
+        MainPageActions.clickMyProfileLnk();
         setLoginEnterField(login);
         setPasswordEnterField(password);
         pressLoginButton();
+    }
+
+    public static void logOutOlx() {
+        hoverOver(myProfileLink(), MyProfilePage.myProfileLogOutLnk());
     }
 }

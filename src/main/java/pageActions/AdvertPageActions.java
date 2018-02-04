@@ -1,15 +1,16 @@
 package pageActions;
 
-import coreFunctions.OlxWebElementsSetup;
 import org.openqa.selenium.WebDriver;
 import pages.AdvertPage;
 
 public class AdvertPageActions extends AdvertPage {
+    protected static WebDriver driver;
+
     public AdvertPageActions(WebDriver driver) {
-        super(driver);
+        this.driver = driver;
     }
 
-    public String getAdvertPageTitleText() {
-        return OlxWebElementsSetup.getText(advertPageTitle());
+    public static String getAdvertPageTitle() {
+        return getText(AdvertPage.advertPageTitle());
     }
 }

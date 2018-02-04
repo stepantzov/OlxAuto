@@ -1,16 +1,9 @@
 package pages;
 
-import coreFunctions.OlxWebElementsSetup;
-import org.openqa.selenium.WebDriver;
+import coreFunctions.ActionsSetup;
 import org.openqa.selenium.WebElement;
 
-public class MainPage extends OlxWebElementsSetup {
-
-    protected static WebDriver driver;
-
-    public MainPage(WebDriver driver) {
-        this.driver = driver;
-    }
+public class MainPage extends ActionsSetup {
 
     public static WebElement myProfileLink() {
         return getElement("//*[@id='topLoginLink']/span/strong", DELAY, XPATH);
@@ -28,11 +21,15 @@ public class MainPage extends OlxWebElementsSetup {
         return getElement("//*[@id='cityField']", DELAY, XPATH);
     }
 
-    public WebElement addNewAdvertLink() {
+    public WebElement myGeoSuggestion() {
+        return getElement("//ul[@class='suggestgeo bgfff normal br-3 abs']", DELAY, XPATH);
+    }
+
+    public WebElement addNewAdvertLnk() {
         return getElement("//*[@id='postNewAdLink']", DELAY, XPATH);
     }
 
-    public WebElement myLoggedOnUserProfileLink() {
-        return getElement(".//*[@id='topLoginLink']/span/strong", DELAY, XPATH);
+    public WebElement homePageLogo() {
+        return getElement("//a[@href='https://www.olx.ua']", DELAY, XPATH);
     }
 }

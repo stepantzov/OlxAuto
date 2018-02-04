@@ -1,7 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Java template
 # Compiled class file
-*.class
 
 # Log file
 *.log
@@ -24,10 +23,11 @@
 hs_err_pid*
 
 *.iml
-.idea/
 out/
 target/
 lib/
-classes/
 
 .idea/workspace.xml
+/annotations.xml
+annotations.xml
+src/main/resources/

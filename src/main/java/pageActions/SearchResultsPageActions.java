@@ -1,6 +1,6 @@
 package pageActions;
 
-import coreFunctions.OlxWebElementsSetup;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.SearchResultsPage;
 
@@ -9,11 +9,15 @@ public class SearchResultsPageActions extends SearchResultsPage {
         super(driver);
     }
 
-    public String getMyProfilePageText() {
-        return OlxWebElementsSetup.getText(mySearchResultsFoundText());
+    public static String getMyProfilePageText() {
+        return getText(mySearchResultsFoundText());
     }
 
-    public void pressClosePopUpButton() {
-        OlxWebElementsSetup.elementClick(searchResultsPopUpCloseButton());
+    public static void pressClosePopUpButton() {
+        setImplicitWaitTime(1);
+        if (getDriver().findElements(By.xpath("//span[@class='highlight-close']")).size() > 0) {
+            searchResultsPopUpCloseButton().click();
+        } else
+            System.out.println("No pop-up present");
     }
 }

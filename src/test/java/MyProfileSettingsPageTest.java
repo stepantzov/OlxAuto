@@ -1,40 +1,31 @@
-import coreFunctions.BaseSetup;
+
+import coreFunctions.DriverSetup;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import actionsVetification.MainPageActionsVerify;
+import pageActions.LoginPageActions;
+import pageActions.MainPageActions;
+import pageActions.MyProfileSettingsPageActions;
 
-public class MyProfileSettingsPageTest extends BaseSetup {
+public class MyProfileSettingsPageTest extends DriverSetup {
 
     private static WebDriver driver;
-    private MainPageActionsVerify mainPageActions;
-
-    private String login = "stepantzov@gmail.com";
-    private String password = "123ZZror";
+    private MainPageActions mainPageActions;
 
     @BeforeClass
     public static void setUp() {
-        driver = getDriver(); //can driver be static actually????
+        driver = getDriver();
     }
 
     @Test
-    public void myProfileLoginTest() {
+    public void MyProfileSettingsPageHeaderVerification() {
+        mainPageActions = new MainPageActions(driver);
+        LoginPageActions.loginOlx(LOGIN, PASSWORD);
 
-        mainPageActions = new MainPageActionsVerify(driver);
-
-        System.out.println("myProfileLoginTest test started");
-        Assert.assertTrue("Can't log in successfully", mainPageActions.verifyLoginSuccessfully());
-        System.out.println("myProfileLoginTest test has been completed.\n");
-    }
-
-    @Test
-    public void MyProfileSettingsPageOpenVerification() {
-
-        mainPageActions = new MainPageActionsVerify(driver);
-
-        System.out.println("\nMy Profile Settings PageOpen Verification test started");
-        Assert.assertTrue("Element is missing or Page is not opened", mainPageActions.verifyOpenMyProfileSettings());
-        System.out.println("My Profile Settings PageOpen Verification test has been completed.\n");
+        System.out.println("\nMy Profile Settings page header verification test started");
+        MainPageActions.openMyProfileSettings();
+        Assert.assertEquals("Настройки", MyProfileSettingsPageActions.getMyProfileSettingsHeader());
+        System.out.println("My Profile Settings page header verification test been completed.\n");
     }
 }

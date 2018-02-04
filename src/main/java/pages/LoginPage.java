@@ -1,33 +1,37 @@
 package pages;
 
-import coreFunctions.OlxWebElementsSetup;
+import coreFunctions.ActionsSetup;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LoginPage extends OlxWebElementsSetup {
+public class LoginPage extends ActionsSetup {
     protected static WebDriver driver;
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public static WebElement enterButton() {
+    public static WebElement enterBtn() {
         return getElement("//*[@id='se_userLogin']", DELAY, XPATH);
     }
 
-    public static WebElement loginEnterField() {
+    public static WebElement loginEnterFld() {
         return getElement("//*[@id='userEmail']", DELAY, XPATH);
     }
 
-    public static WebElement passwordEnterField() {
+    public static WebElement passwordEnterFld() {
         return getElement("//*[@id='userPass']", DELAY, XPATH);
     }
 
-    public static WebElement loginValidationAlert(){
+    public static WebElement loginValidationAlrt() {
         return getElement("//label[@for='userEmail']", DELAY, XPATH);
     }
 
-    public static WebElement passwordValidationAlert(){
+    public static WebElement passwordValidationAlrt() {
         return getElement("//label[@for='userPass']", DELAY, XPATH);
+    }
+
+    public static WebElement facebookBtn() {
+        return getElement("//*[@id='fblogin']", DELAY, XPATH);
     }
 }
