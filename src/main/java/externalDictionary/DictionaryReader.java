@@ -22,4 +22,9 @@ public class DictionaryReader {
         }
         return items;
     }
+
+    public static int dictionarySize() {
+
+        return (DictionaryReader.fileReader().size()/2);
+    }
 }

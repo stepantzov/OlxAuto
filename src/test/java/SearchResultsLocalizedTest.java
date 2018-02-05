@@ -1,4 +1,5 @@
 import coreFunctions.DriverSetup;
+import externalDictionary.DictionaryReader;
 import externalDictionary.SearchParametersFactory;
 import org.junit.After;
 import org.junit.Assert;
@@ -26,7 +27,8 @@ public class SearchResultsLocalizedTest extends DriverSetup {
     @Parameterized.Parameters
     public static Collection<Object[]> dataNotLocalized() {
         SearchParametersFactory searchParametersFactory = new SearchParametersFactory();
-        Object[][] data = new Object[9][2];
+        int size = DictionaryReader.dictionarySize();
+        Object[][] data = new Object[size][2];
         for (int i = 0; i < data.length; i++) {
             data[i][0] = searchParametersFactory.getDictionary("PARAMETERSNOTLOCALIZED").getSearchParameter().get(i);
         }
@@ -52,10 +54,10 @@ public class SearchResultsLocalizedTest extends DriverSetup {
         mainPageActions = new MainPageActions(driver);
 
         System.out.println("Search Results Localized test test started");
-        mainPageActions.clearLocalization();
+        //mainPageActions.clearLocalization();
         mainPageActions.setSearchFieldVal(searchKeyword);
         mainPageActions.setSearchLocalizationVal(searchLocale);
-
+        mainPageActions.clickLocaliationSuggest();
         mainPageActions.pressSearchButton();
 
         SearchResultsPageActions.pressClosePopUpButton();

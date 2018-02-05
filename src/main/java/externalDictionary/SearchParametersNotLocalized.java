@@ -16,4 +16,3 @@ public class SearchParametersNotLocalized implements ExternalDictionary {
         return returnItems;
     }
 }
-

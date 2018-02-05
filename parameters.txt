@@ -9,10 +9,10 @@ Kiev
 book
 Lvov
 radeon
-Poltava
+Poltav
 msi
 Nikolaev
 asus
-Odessa
+Odess
 aser
 Kiev

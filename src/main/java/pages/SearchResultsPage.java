@@ -18,8 +18,4 @@ public class SearchResultsPage extends ActionsSetup {
     public static WebElement searchResultsPopUpCloseButton(){
         return getElement("//span[@class='highlight-close']", DELAY, XPATH);
     }
-
-   /* public static WebElement searchResultsPopUpFrame(){
-        return getElement("//iframe[@id='google_osd_static_frame_224834594489']",DELAY,XPATH);
-    }*/
 }

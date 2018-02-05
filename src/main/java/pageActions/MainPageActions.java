@@ -30,7 +30,7 @@ public class MainPageActions extends MainPage {
     }
 
     public static void logout() {
-/* TODO implement log out action */
+    //TODO implement log out action
     }
 
     public SearchResultsPageActions pressSearchButton() {
@@ -50,11 +50,11 @@ public class MainPageActions extends MainPage {
     }
 
     public void setSearchLocalizationVal(String searchLocalizationVal) {
+        mySearchLocalizationField().clear();
         sendKeys(mySearchLocalizationField(), searchLocalizationVal);
-//        setImplicitWaitTime(1111);
     }
 
-    public void clickGeoSuggestion() {
+    public void clickLocaliationSuggest() {
         elementClick(myGeoSuggestion());
     }
 
