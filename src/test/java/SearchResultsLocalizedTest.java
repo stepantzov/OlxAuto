@@ -18,6 +18,7 @@ import java.util.Collection;
 public class SearchResultsLocalizedTest extends DriverSetup {
     private static WebDriver driver;
     private MainPageActions mainPageActions;
+    private final static int parametersCount = 2;
 
     @Parameterized.Parameter(0)
     public String searchKeyword;
@@ -27,8 +28,10 @@ public class SearchResultsLocalizedTest extends DriverSetup {
     @Parameterized.Parameters
     public static Collection<Object[]> dataNotLocalized() {
         SearchParametersFactory searchParametersFactory = new SearchParametersFactory();
-        int size = DictionaryReader.dictionarySize();
-        Object[][] data = new Object[size][2];
+
+        int dictionarySize = DictionaryReader.dictionarySize();
+        Object[][] data = new Object[dictionarySize][parametersCount];
+
         for (int i = 0; i < data.length; i++) {
             data[i][0] = searchParametersFactory.getDictionary("PARAMETERSNOTLOCALIZED").getSearchParameter().get(i);
         }
@@ -52,9 +55,8 @@ public class SearchResultsLocalizedTest extends DriverSetup {
     @Test
     public void searchResultsLocalizedTest() {
         mainPageActions = new MainPageActions(driver);
-
         System.out.println("Search Results Localized test test started");
-        //mainPageActions.clearLocalization();
+
         mainPageActions.setSearchFieldVal(searchKeyword);
         mainPageActions.setSearchLocalizationVal(searchLocale);
         mainPageActions.clickLocaliationSuggest();
@@ -65,6 +67,7 @@ public class SearchResultsLocalizedTest extends DriverSetup {
         Assert.assertTrue("No results present.", results.contains("Найдено"));
         System.out.println(results);
         mainPageActions.navigateHomePage();
+
         System.out.println("Search Results Found Localized test has been completed.");
     }
 }

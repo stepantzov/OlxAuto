@@ -43,7 +43,7 @@ public class SearchResultsNotLocalizedTest extends DriverSetup {
         mainPageActions = new MainPageActions(driver);
 
         System.out.println("\nSearch Results Test test started...");
-        System.out.format("Searching for keyvalue='%s' \n", searchKeyword);
+        System.out.format("Searching for key value='%s' \n", searchKeyword);
 
         mainPageActions.setSearchFieldVal(searchKeyword);
         mainPageActions.pressSearchButton();

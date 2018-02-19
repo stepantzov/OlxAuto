@@ -28,6 +28,5 @@ target/
 lib/
 
 .idea/workspace.xml
-/annotations.xml
 annotations.xml
 src/main/resources/
