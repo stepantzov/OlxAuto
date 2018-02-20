@@ -56,4 +56,3 @@ public class SearchResultsNotLocalizedTest extends DriverSetup {
         System.out.println("Search Results Found test has been completed.");
     }
 }
-
