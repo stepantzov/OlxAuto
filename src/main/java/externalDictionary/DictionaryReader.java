@@ -24,7 +24,6 @@ public class DictionaryReader {
     }
 
     public static int dictionarySize() {
-
         return (DictionaryReader.fileReader().size()/2);
     }
 }
