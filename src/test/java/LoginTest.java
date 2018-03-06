@@ -1,6 +1,5 @@
 import coreFunctions.DriverSetup;
 import org.junit.Assert;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import pageActions.LoginPageActions;
@@ -11,11 +10,6 @@ import pages.MyProfilePage;
 public class LoginTest extends DriverSetup {
     private static WebDriver driver;
     private MainPageActions mainPageActions;
-
-    @BeforeClass
-    public static void setUp() {
-        driver = getDriver();
-    }
 
     @Test
     public void myProfileFacebookButtonPresent() {
@@ -45,7 +39,7 @@ public class LoginTest extends DriverSetup {
         mainPageActions.pressMyProfileLnk();
 
         System.out.println("myProfileLoginTest test started");
-        LoginPageActions.loginOlx(LOGIN, PASSWORD);
+        LoginPageActions.loginOlxFacebook();
         Assert.assertTrue("Can't log in successfully", MyProfilePage.myProfileActiveAdvTitle().isDisplayed());
         LoginPageActions.logOutOlx();
         System.out.println("myProfileLoginTest test has been completed.\n");

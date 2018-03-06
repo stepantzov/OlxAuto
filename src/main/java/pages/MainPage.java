@@ -4,7 +4,6 @@ import coreFunctions.ActionsSetup;
 import org.openqa.selenium.WebElement;
 
 public class MainPage extends ActionsSetup {
-
     public static WebElement myProfileLink() {
         return getElement("//*[@id='topLoginLink']/span/strong", DELAY, XPATH);
     }

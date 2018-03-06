@@ -3,13 +3,13 @@ import externalDictionary.ExternalDictionary;
 import externalDictionary.SearchParametersFactory;
 import org.junit.After;
 import org.junit.Assert;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 import pageActions.MainPageActions;
 import pageActions.SearchResultsPageActions;
+
 import java.util.List;
 
 @RunWith(Parameterized.class)
@@ -17,20 +17,15 @@ public class SearchResultsNotLocalizedTest extends DriverSetup {
     private static WebDriver driver;
     private MainPageActions mainPageActions;
 
-    @Parameterized.Parameter(0)
+    @Parameterized.Parameter()
     public String searchKeyword;
 
     @Parameterized.Parameters
     public static List dataNotLocalized() {
         SearchParametersFactory searchParametersFactory = new SearchParametersFactory();
-        ExternalDictionary externalDictionaryNotLocalized = searchParametersFactory.getDictionary("PARAMETERSLOCALIZED");
+        ExternalDictionary externalDictionaryNotLocalized = searchParametersFactory.getDictionary("PARAMETERSNOTLOCALIZED");
 
         return externalDictionaryNotLocalized.getSearchParameter();
-    }
-
-    @BeforeClass
-    public static void setUp() {
-        driver = getDriver();
     }
 
     @After

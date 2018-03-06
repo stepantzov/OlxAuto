@@ -3,7 +3,6 @@ import externalDictionary.DictionaryReader;
 import externalDictionary.SearchParametersFactory;
 import org.junit.After;
 import org.junit.Assert;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -42,10 +41,6 @@ public class SearchResultsLocalizedTest extends DriverSetup {
         return Arrays.asList(data);
     }
 
-    @BeforeClass
-    public static void setUp() {
-        driver = getDriver();
-    }
 
     @After
     public void navigateHomePage() {

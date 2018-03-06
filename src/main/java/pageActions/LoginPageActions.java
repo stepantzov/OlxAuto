@@ -30,6 +30,14 @@ public class LoginPageActions extends LoginPage {
         pressLoginButton();
     }
 
+    public static void loginOlxFacebook(){
+        pressLogInFacebook();
+    }
+
+    private static void pressLogInFacebook() {
+        elementClick(facebookBtn());
+    }
+
     public static void logOutOlx() {
         hoverOver(myProfileLink(), MyProfilePage.myProfileLogOutLnk());
     }
