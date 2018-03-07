@@ -1,4 +1,5 @@
 import coreFunctions.DriverSetup;
+import coreFunctions.TestConditions;
 import externalDictionary.DictionaryReader;
 import externalDictionary.SearchParametersFactory;
 import org.junit.After;
@@ -6,7 +7,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.openqa.selenium.WebDriver;
 import pageActions.MainPageActions;
 import pageActions.SearchResultsPageActions;
 
@@ -14,8 +14,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @RunWith(Parameterized.class)
-public class SearchResultsLocalizedTest extends DriverSetup {
-    private static WebDriver driver;
+public class SearchResultsLocalizedTest extends TestConditions {
     private MainPageActions mainPageActions;
     private final static int parametersCount = 2;
 
@@ -49,7 +48,7 @@ public class SearchResultsLocalizedTest extends DriverSetup {
 
     @Test
     public void searchResultsLocalizedTest() {
-        mainPageActions = new MainPageActions(driver);
+        mainPageActions = new MainPageActions(DriverSetup.driverInstance);
         System.out.println("Search Results Localized test test started");
 
         mainPageActions.setSearchFieldVal(searchKeyword);

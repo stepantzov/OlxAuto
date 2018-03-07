@@ -1,8 +1,12 @@
 package pageActions;
 
+import coreFunctions.DriverSetup;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.SearchResultsPage;
+
+import static coreFunctions.ActionsSetup.getText;
+import static coreFunctions.ActionsSetup.setImplicitWaitTime;
 
 public class SearchResultsPageActions extends SearchResultsPage {
     public SearchResultsPageActions(WebDriver driver) {
@@ -15,7 +19,7 @@ public class SearchResultsPageActions extends SearchResultsPage {
 
     public static void pressClosePopUpButton() {
         setImplicitWaitTime(1);
-        if (getDriver().findElements(By.xpath("//span[@class='highlight-close']")).size() > 0) {
+        if (DriverSetup.driverInstance.findElements(By.xpath("//span[@class='highlight-close']")).size() > 0) {
             searchResultsPopUpCloseButton().click();
         } else
             System.out.println("No pop-up present");

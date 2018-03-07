@@ -1,4 +1,5 @@
 import coreFunctions.DriverSetup;
+import coreFunctions.TestConditions;
 import externalDictionary.ExternalDictionary;
 import externalDictionary.SearchParametersFactory;
 import org.junit.After;
@@ -6,15 +7,13 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.openqa.selenium.WebDriver;
 import pageActions.MainPageActions;
 import pageActions.SearchResultsPageActions;
 
 import java.util.List;
 
 @RunWith(Parameterized.class)
-public class SearchResultsNotLocalizedTest extends DriverSetup {
-    private static WebDriver driver;
+public class SearchResultsNotLocalizedTest extends TestConditions {
     private MainPageActions mainPageActions;
 
     @Parameterized.Parameter()
@@ -35,7 +34,7 @@ public class SearchResultsNotLocalizedTest extends DriverSetup {
 
     @Test
     public void searchResultsNotLocalizedTest() {
-        mainPageActions = new MainPageActions(driver);
+        mainPageActions = new MainPageActions(DriverSetup.driverInstance);
 
         System.out.println("\nSearch Results Test test started...");
         System.out.format("Searching for key value='%s' \n", searchKeyword);

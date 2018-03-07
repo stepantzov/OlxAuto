@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 public class ActionsSetup extends DriverSetup {
     public static WebElement getElement(String selector, int timeWaiting, String typeSelector) {
-        return new WebDriverWait(DriverSetup.driver, setTimeWaiting(timeWaiting, DELAY)).
+        return new WebDriverWait(DriverSetup.driverInstance, setTimeWaiting(timeWaiting, DELAY)).
                 until(ExpectedConditions.presenceOfElementLocated(bySelector(selector, typeSelector)));
     }
 
@@ -36,7 +36,7 @@ public class ActionsSetup extends DriverSetup {
     }
 
     public static void setImplicitWaitTime(int implicitWaitTime) {
-        driver.manage().timeouts().implicitlyWait(implicitWaitTime, TimeUnit.SECONDS);
+        DriverSetup.driverInstance.manage().timeouts().implicitlyWait(implicitWaitTime, TimeUnit.SECONDS);
     }
 
     public static String getText(WebElement element) {
@@ -55,7 +55,7 @@ public class ActionsSetup extends DriverSetup {
     }
 
     public static void hoverOver(WebElement baseElement, WebElement selectedElement) {
-        Actions action = new Actions(driver);
+        Actions action = new Actions(DriverSetup.driverInstance);
         action.moveToElement(baseElement).moveToElement(selectedElement).click().build().perform();
     }
 }

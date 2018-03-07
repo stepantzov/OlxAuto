@@ -1,20 +1,18 @@
 
 import coreFunctions.DriverSetup;
+import coreFunctions.TestConditions;
 import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
 import pageActions.LoginPageActions;
 import pageActions.MainPageActions;
 import pageActions.MyProfileSettingsPageActions;
 
-public class MyProfileSettingsPageTest extends DriverSetup {
-
-    private static WebDriver driver;
+public class MyProfileSettingsPageTest extends TestConditions {
     private MainPageActions mainPageActions;
 
     @Test
     public void MyProfileSettingsPageHeaderVerification() {
-        mainPageActions = new MainPageActions(driver);
+        mainPageActions = new MainPageActions(DriverSetup.driverInstance);
         LoginPageActions.loginOlx(LOGIN, PASSWORD);
 
         System.out.println("\nMy Profile Settings page header verification test started");

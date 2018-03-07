@@ -1,10 +1,12 @@
 package pages;
 
-import coreFunctions.ActionsSetup;
+import coreFunctions.DriverSetup;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class SearchResultsPage extends ActionsSetup {
+import static coreFunctions.ActionsSetup.getElement;
+
+public class SearchResultsPage extends DriverSetup {
     protected WebDriver driver;
 
     public SearchResultsPage(WebDriver driver) {

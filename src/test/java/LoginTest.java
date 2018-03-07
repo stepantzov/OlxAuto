@@ -1,19 +1,18 @@
 import coreFunctions.DriverSetup;
+import coreFunctions.TestConditions;
 import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
 import pageActions.LoginPageActions;
 import pageActions.MainPageActions;
 import pages.LoginPage;
 import pages.MyProfilePage;
 
-public class LoginTest extends DriverSetup {
-    private static WebDriver driver;
+public class LoginTest extends TestConditions {
     private MainPageActions mainPageActions;
 
     @Test
     public void myProfileFacebookButtonPresent() {
-        mainPageActions = new MainPageActions(driver);
+        mainPageActions = new MainPageActions(DriverSetup.driverInstance);
         mainPageActions.pressMyProfileLnk();
 
         System.out.println("\nmyProfile Facebook Button Present test started");
@@ -23,7 +22,7 @@ public class LoginTest extends DriverSetup {
 
     @Test
     public void myProfileValidationVerification() {
-        mainPageActions = new MainPageActions(driver);
+        mainPageActions = new MainPageActions(DriverSetup.driverInstance);
         mainPageActions.pressMyProfileLnk();
 
         System.out.println("\nMy Profile Validation Verification test started");
@@ -34,8 +33,8 @@ public class LoginTest extends DriverSetup {
     }
 
     @Test
-    public void myProfileLoginSuccessfullTest() {
-        mainPageActions = new MainPageActions(driver);
+    public void myProfileLoginSuccessfulTest() {
+        mainPageActions = new MainPageActions(DriverSetup.driverInstance);
         mainPageActions.pressMyProfileLnk();
 
         System.out.println("myProfileLoginTest test started");
