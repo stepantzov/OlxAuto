@@ -1,3 +1,4 @@
+package tests;
 
 import coreFunctions.DriverSetup;
 import coreFunctions.TestConditions;

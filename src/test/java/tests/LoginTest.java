@@ -1,3 +1,5 @@
+package tests;
+
 import coreFunctions.DriverSetup;
 import coreFunctions.TestConditions;
 import org.junit.Assert;
