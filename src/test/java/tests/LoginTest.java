@@ -27,7 +27,7 @@ public class LoginTest extends TestConditions {
         mainPageActions = new MainPageActions(DriverSetup.driverInstance);
         mainPageActions.pressMyProfileLnk();
 
-        System.out.println("\nMy Profile Validation Verification test started");
+        System.out.println("My Profile Validation Verification test started");
         LoginPageActions.pressLoginButton();
         Assert.assertTrue("Login validation is absent", LoginPage.loginValidationAlrt().isDisplayed());
         Assert.assertTrue("Password validation is absent", LoginPage.passwordValidationAlrt().isDisplayed());

@@ -12,7 +12,7 @@ public class SearchResultsPage extends ActionsSetup {
     }
 
     public static WebElement mySearchResultsFoundText(){
-        return getElement("//div[@class='hasPromoted section clr']|p[@class='color-2']", DELAY, XPATH);
+        return getElement("//p[@class='color-2' and contains(text(), 'Найдено')]", DELAY, XPATH);
     }
 
     public static WebElement searchResultsPopUpCloseButton(){

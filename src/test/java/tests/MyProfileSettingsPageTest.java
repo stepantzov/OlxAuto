@@ -14,11 +14,12 @@ public class MyProfileSettingsPageTest extends TestConditions {
     @Test
     public void MyProfileSettingsPageHeaderVerification() {
         mainPageActions = new MainPageActions(DriverSetup.driverInstance);
+        mainPageActions.pressMyProfileLnk();
         LoginPageActions.loginOlxFacebook(FBLOGIN, FBPASSWORD);
 
-        System.out.println("\nMy Profile Settings page header verification test started");
-        MainPageActions.openMyProfileSettings();
+        System.out.println("My Profile Settings page header verification test started");
+        mainPageActions.openMyProfileSettings();
         Assert.assertEquals("Настройки", MyProfileSettingsPageActions.getMyProfileSettingsHeader());
-        System.out.println("My Profile Settings page header verification test been completed.\n");
+        System.out.println("My Profile Settings page header verification test been completed successfully.\n");
     }
 }

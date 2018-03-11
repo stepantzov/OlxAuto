@@ -19,17 +19,15 @@ public class MainPageActions extends MainPage {
         sendKeys(mySearchField(), fieldValue);
     }
 
-    public AdvertPageActions pressAddNewAdvertLnk() {
+    public void pressAddNewAdvertLnk() {
         elementClick(addNewAdvertLnk());
-
-        return new AdvertPageActions(driver);
     }
 
     public void pressMyProfileLnk() {
         elementClick(myProfileLink());
     }
 
-    public static void logout() {
+    public static void logOut() {
     //TODO implement log out action
     }
 

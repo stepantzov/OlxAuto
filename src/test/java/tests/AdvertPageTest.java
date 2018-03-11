@@ -14,11 +14,12 @@ public class AdvertPageTest extends TestConditions {
     @Test
     public void getAdvertPageTest() {
         mainPageActions = new MainPageActions(DriverSetup.driverInstance);
+        mainPageActions.pressMyProfileLnk();
         LoginPageActions.loginOlxFacebook(FBLOGIN, FBPASSWORD);
 
         System.out.println("\n getAdvertPage test has started. ");
-        AdvertPageActions advertPageActions = mainPageActions.pressAddNewAdvertLnk();
-        Assert.assertEquals("Подать бесплатное объявление на OLX", advertPageActions.getAdvertPageTitle());
+        mainPageActions.pressAddNewAdvertLnk();
+        Assert.assertEquals("Подать объявление на OLX", AdvertPageActions.getAdvertPageTitle());
         System.out.println("\n getAdvertPage test has been completed.");
     }
 }

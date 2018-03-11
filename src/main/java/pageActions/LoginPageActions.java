@@ -6,12 +6,6 @@ import pages.MyProfilePage;
 import static pages.MainPage.myProfileLink;
 
 public class LoginPageActions extends LoginPage {
-    static FacebookLoginPageActions facebookLoginPageActions;
-
-/*    public LoginPageActions(WebDriver driver) {
-        super(driver);
-    }*/
-
     public static void setLoginEnterField(String loginValue) {
         sendKeys(loginEnterFld(), loginValue);
     }
@@ -33,9 +27,9 @@ public class LoginPageActions extends LoginPage {
 
     public static void loginOlxFacebook(String logVal, String passVal){
         pressLogInFacebook();
-        facebookLoginPageActions.setFacebookLoginField(logVal);
-        facebookLoginPageActions.setFacebookPasswordField(passVal);
-        facebookLoginPageActions.pressFacebookLoginButton();
+        FacebookLoginPageActions.setFacebookLoginField(logVal);
+        FacebookLoginPageActions.setFacebookPasswordField(passVal);
+        FacebookLoginPageActions.pressFacebookLoginButton();
     }
 
     private static void pressLogInFacebook() {
@@ -45,6 +39,5 @@ public class LoginPageActions extends LoginPage {
 
     public static void logOutOlx() {
         hoverOver(myProfileLink(), MyProfilePage.myProfileLogOutLnk());
-        
     }
 }

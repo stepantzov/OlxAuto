@@ -1,16 +1,9 @@
 package pages;
 
 import coreFunctions.ActionsSetup;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class MyProfilePage extends ActionsSetup {
-    protected static WebDriver driver;
-
-    public MyProfilePage(WebDriver driver) {
-        this.driver = driver;
-    }
-
     public WebElement myProfilePageHeaderText() {
         return getElement("//*[@id='login_tab']", DELAY, XPATH);
     }

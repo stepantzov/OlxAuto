@@ -11,6 +11,6 @@ public class AdvertPageActions extends AdvertPage {
     }
 
     public static String getAdvertPageTitle() {
-        return getText(AdvertPage.advertPageTitle());
+        return getText(advertPageTitle());
     }
 }

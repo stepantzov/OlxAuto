@@ -5,8 +5,10 @@ import org.openqa.selenium.WebDriver;
 import pages.MyProfilePage;
 
 public class MyProfilePageActions extends MyProfilePage {
+    protected static WebDriver driver;
+
     public MyProfilePageActions(WebDriver driver) {
-        super(driver);
+        this.driver = driver;
     }
 
     public String getMyProfilePageText() {

@@ -10,18 +10,18 @@ public class MainSuiteBuilder extends TestConditions {
     public void highPriorityTestSuiteBuilder() {
         TestSuiteTemplate coreFunctionalitySuite = suiteBuilder.createCoreFunctionalitySuite();
         coreFunctionalitySuite.executeSuiteItemsScope();
-        System.out.println("Core Functionality Suite:");
+        System.out.println("\nCore Functionality Suite Items:");
         coreFunctionalitySuite.showTestItems();
-        System.out.println("CoreFunctionalitySuite execution time:");
+        System.out.println("\nCoreFunctionalitySuite execution time: " + coreFunctionalitySuite.getSuiteExecutionTime());
         coreFunctionalitySuite.getSuiteExecutionTime();
     }
 
     @Test
     public void lowPriorityTestSuiteBuilder() {
-        TestSuiteTemplate lowPrioritySuite = suiteBuilder.createRestFunctionalitySuite();
-        System.out.println("restFunctionalitySuite");
-        lowPrioritySuite.showTestItems();
-        System.out.println("restFunctionalitySuite execution time:");
-        lowPrioritySuite.getSuiteExecutionTime();
+        TestSuiteTemplate restFunctionalitySuite = suiteBuilder.createRestFunctionalitySuite();
+        restFunctionalitySuite.executeSuiteItemsScope();
+        System.out.println("\nRest Functionality Suite Items:");
+        restFunctionalitySuite.showTestItems();
+        System.out.println("restFunctionalitySuite execution time: " + restFunctionalitySuite.getSuiteExecutionTime());
     }
 }
