@@ -1,15 +1,23 @@
 package suiteBuilder;
 
-public class MainSuiteBuilder {
-    public static void main(String[] args) {
-        SuiteBuilder suiteBuilder = new SuiteBuilder();
+import coreFunctions.TestConditions;
+import org.junit.Test;
 
+public class MainSuiteBuilder extends TestConditions {
+    SuiteBuilder suiteBuilder = new SuiteBuilder();
+
+    @Test
+    public void highPriorityTestSuiteBuilder() {
         TestSuiteTemplate coreFunctionalitySuite = suiteBuilder.createCoreFunctionalitySuite();
-        System.out.println("coreFunctionalitySuite");
+        coreFunctionalitySuite.executeSuiteItemsScope();
+        System.out.println("Core Functionality Suite:");
         coreFunctionalitySuite.showTestItems();
-        System.out.println("coreFunctionalitySuite execution time:");
+        System.out.println("CoreFunctionalitySuite execution time:");
         coreFunctionalitySuite.getSuiteExecutionTime();
+    }
 
+    @Test
+    public void lowPriorityTestSuiteBuilder() {
         TestSuiteTemplate lowPrioritySuite = suiteBuilder.createRestFunctionalitySuite();
         System.out.println("restFunctionalitySuite");
         lowPrioritySuite.showTestItems();

@@ -16,16 +16,17 @@ public class OlxMyProfileTestSuite extends LoginFunctionalityTest {
     }
 
     @Override
-    public void Scope() {
+    public void executeScope() {
         long startTime = System.nanoTime();
         MyProfileSettingsPageTest myProfileSettingsPageTest = new MyProfileSettingsPageTest();
         myProfileSettingsPageTest.MyProfileSettingsPageHeaderVerification();
         long endTime = System.nanoTime();
+
         executionDuration = (endTime - startTime);
     }
 
     @Override
     public long executionTime() {
-        return 0;
+        return executionDuration;
     }
 }

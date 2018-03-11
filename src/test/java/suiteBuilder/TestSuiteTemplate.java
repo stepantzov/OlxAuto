@@ -10,6 +10,12 @@ public class TestSuiteTemplate {
         items.add(testAttributes);
     }
 
+    public void executeSuiteItemsScope(){
+        for (TestAttributes testAttributes : items){
+            testAttributes.executeScope();
+        }
+    }
+
     public long getSuiteExecutionTime() {
         long executionTime = 0;
 

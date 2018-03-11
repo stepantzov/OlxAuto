@@ -1,15 +1,14 @@
 package pages;
 
 import coreFunctions.ActionsSetup;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class LoginPage extends ActionsSetup {
-    protected static WebDriver driver;
+/*    protected static WebDriver driver;
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
-    }
+    }*/
 
     public static WebElement enterBtn() {
         return getElement("//*[@id='se_userLogin']", DELAY, XPATH);

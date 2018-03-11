@@ -2,10 +2,12 @@ package suiteBuilder;
 
 import tests.AdvertPageTest;
 
-public class OlxAdvertPageTest extends LoginFunctionalityTest {
+public class OlxAdvertPageTestSuite extends LoginFunctionalityTest {
+    long executionDuration;
+
     @Override
     public String name() {
-        return "OlxAdvertPageTest";
+        return "OlxAdvertPageTestSuite";
     }
 
     @Override
@@ -14,13 +16,17 @@ public class OlxAdvertPageTest extends LoginFunctionalityTest {
     }
 
     @Override
-    public void Scope() {
+    public void executeScope() {
+        long startTime = System.nanoTime();
         AdvertPageTest advertPageTest = new AdvertPageTest();
         advertPageTest.getAdvertPageTest();
+        long endTime = System.nanoTime();
+
+        executionDuration = (endTime - startTime);
     }
 
     @Override
     public long executionTime() {
-        return 0;
+        return executionDuration;
     }
 }

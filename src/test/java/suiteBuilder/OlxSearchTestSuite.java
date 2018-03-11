@@ -8,23 +8,24 @@ public class OlxSearchTestSuite extends SearchFunctionalityTest {
 
     @Override
     public String name() {
-        return "suiteBuilder.OlxSearchTestSuite";
+        return "OlxSearchTestSuite";
     }
 
     @Override
     public String priority() {
-        return "Medium";
+        return "High";
     }
 
     @Override
-    public void Scope() {
+    public void executeScope() {
         long startTime = System.nanoTime();
         SearchResultsLocalizedTest searchResultsLocalizedTest = new SearchResultsLocalizedTest();
-        searchResultsLocalizedTest.searchResultsLocalizedTest();
+        searchResultsLocalizedTest.searchResultsLocalizedTestNoParameters();
 
         SearchResultsNotLocalizedTest searchResultsNotLocalizedTest = new SearchResultsNotLocalizedTest();
-        searchResultsNotLocalizedTest.searchResultsNotLocalizedTest();
+        searchResultsNotLocalizedTest.searchResultsNotLocalizedTestNoParameters();
         long endTime = System.nanoTime();
+
         executionDuration = (endTime - startTime);
     }
 

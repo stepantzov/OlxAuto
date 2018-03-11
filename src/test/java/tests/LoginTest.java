@@ -40,8 +40,8 @@ public class LoginTest extends TestConditions {
         mainPageActions.pressMyProfileLnk();
 
         System.out.println("myProfileLoginTest test started");
-        LoginPageActions.loginOlxFacebook();
-        Assert.assertTrue("Can't log in successfully", MyProfilePage.myProfileActiveAdvTitle().isDisplayed());
+        LoginPageActions.loginOlxFacebook(FBLOGIN, FBPASSWORD);
+        Assert.assertTrue("Can't log in successfully", MyProfilePage.myProfileNewAdvTitle().isDisplayed());
         LoginPageActions.logOutOlx();
         System.out.println("myProfileLoginTest test has been completed.\n");
     }

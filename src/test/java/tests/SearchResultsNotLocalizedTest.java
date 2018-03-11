@@ -37,11 +37,29 @@ public class SearchResultsNotLocalizedTest extends TestConditions {
     @Test
     public void searchResultsNotLocalizedTest() {
         mainPageActions = new MainPageActions(DriverSetup.driverInstance);
-
+        mainPageActions.navigateHomePage();
         System.out.println("\nSearch Results Test test started...");
         System.out.format("Searching for key value='%s' \n", searchKeyword);
 
         mainPageActions.setSearchFieldVal(searchKeyword);
+        mainPageActions.pressSearchButton();
+
+        SearchResultsPageActions.pressClosePopUpButton();
+        String results = SearchResultsPageActions.getMyProfilePageText();
+        Assert.assertTrue("No results present.", results.contains("Найдено"));
+        System.out.println(results);
+        mainPageActions.navigateHomePage();
+        System.out.println("Search Results Found test has been completed.");
+    }
+
+    @Test
+    public void searchResultsNotLocalizedTestNoParameters() {
+        mainPageActions = new MainPageActions(DriverSetup.driverInstance);
+        mainPageActions.navigateHomePage();
+        System.out.println("\nSearch Results Test test started...");
+        System.out.format("Searching for key value='%s' \n", searchKeyword);
+
+        mainPageActions.setSearchFieldVal("Adidas");
         mainPageActions.pressSearchButton();
 
         SearchResultsPageActions.pressClosePopUpButton();

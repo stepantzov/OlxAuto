@@ -54,7 +54,7 @@ public class MainPageActions extends MainPage {
         sendKeys(mySearchLocalizationField(), searchLocalizationVal);
     }
 
-    public void clickLocaliationSuggest() {
+    public void clickLocalizationSuggest() {
         elementClick(myGeoSuggestion());
     }
 

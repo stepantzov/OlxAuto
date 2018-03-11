@@ -5,9 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.SearchResultsPage;
 
-import static coreFunctions.ActionsSetup.getText;
-import static coreFunctions.ActionsSetup.setImplicitWaitTime;
-
 public class SearchResultsPageActions extends SearchResultsPage {
     public SearchResultsPageActions(WebDriver driver) {
         super(driver);

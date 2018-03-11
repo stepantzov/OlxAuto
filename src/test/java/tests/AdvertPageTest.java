@@ -14,7 +14,7 @@ public class AdvertPageTest extends TestConditions {
     @Test
     public void getAdvertPageTest() {
         mainPageActions = new MainPageActions(DriverSetup.driverInstance);
-        LoginPageActions.loginOlx(LOGIN, PASSWORD);
+        LoginPageActions.loginOlxFacebook(FBLOGIN, FBPASSWORD);
 
         System.out.println("\n getAdvertPage test has started. ");
         AdvertPageActions advertPageActions = mainPageActions.pressAddNewAdvertLnk();

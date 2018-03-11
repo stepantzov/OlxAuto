@@ -11,6 +11,9 @@ public class GlobalDefinitions {
     public static final String LOGIN = "stepantzov@gmail.com";
     public static final String PASSWORD = "123ZZror";
 
+    public static final String FBLOGIN = "zyclonc@gmail.com";
+    public static final String FBPASSWORD = "123ZZrorZakon1994";
+
     protected static final String XPATH = "xpath";
     protected static final Object CSS = "css";
 

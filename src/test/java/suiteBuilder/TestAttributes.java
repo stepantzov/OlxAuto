@@ -7,7 +7,7 @@ public interface TestAttributes {
 
     String priority();
 
-    void Scope();
+    void executeScope();
 
     long executionTime();
 }

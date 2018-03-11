@@ -14,7 +14,7 @@ public class MyProfileSettingsPageTest extends TestConditions {
     @Test
     public void MyProfileSettingsPageHeaderVerification() {
         mainPageActions = new MainPageActions(DriverSetup.driverInstance);
-        LoginPageActions.loginOlx(LOGIN, PASSWORD);
+        LoginPageActions.loginOlxFacebook(FBLOGIN, FBPASSWORD);
 
         System.out.println("\nMy Profile Settings page header verification test started");
         MainPageActions.openMyProfileSettings();

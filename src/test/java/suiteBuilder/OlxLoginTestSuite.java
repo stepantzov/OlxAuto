@@ -16,18 +16,20 @@ public class OlxLoginTestSuite extends LoginFunctionalityTest {
     }
 
     @Override
-    public void Scope() {
+    public void executeScope() {
         long startTime = System.nanoTime();
         LoginTest loginTest = new LoginTest();
+        loginTest.myProfileValidationVerification();
         loginTest.myProfileFacebookButtonPresent();
         loginTest.myProfileLoginSuccessfulTest();
-        loginTest.myProfileValidationVerification();
         long endTime = System.nanoTime();
+
         executionDuration = (endTime - startTime);
     }
 
     @Override
     public long executionTime() {
+
         return executionDuration;
     }
 }

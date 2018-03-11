@@ -27,7 +27,7 @@ public class MyProfilePage extends ActionsSetup {
         return getElement("//*[@id='login-box-logout']/span/span", DELAY, XPATH);
     }
 
-    public static WebElement myProfileActiveAdvTitle() {
-        return getElement(".//*[@id='typeactive']", DELAY, XPATH);
+    public static WebElement myProfileNewAdvTitle() {
+        return getElement("//a[@id='postNewAdLink']//span[text()='Подать объявление']", DELAY, XPATH);
     }
 }
