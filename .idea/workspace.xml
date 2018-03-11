@@ -2,30 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca470273-614a-4e32-a30c-359e62b7a026" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/pageActions/FacebookLoginPageActions.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/pages/FacebookLoginPage.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/suiteBuilder/OlxAdvertPageTest.java" afterPath="$PROJECT_DIR$/src/test/java/suiteBuilder/OlxAdvertPageTestSuite.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/coreFunctions/GlobalDefinitions.java" afterPath="$PROJECT_DIR$/src/main/java/coreFunctions/GlobalDefinitions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pageActions/LoginPageActions.java" afterPath="$PROJECT_DIR$/src/main/java/pageActions/LoginPageActions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pageActions/MainPageActions.java" afterPath="$PROJECT_DIR$/src/main/java/pageActions/MainPageActions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pageActions/SearchResultsPageActions.java" afterPath="$PROJECT_DIR$/src/main/java/pageActions/SearchResultsPageActions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" afterPath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" afterPath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pages/MyProfilePage.java" afterPath="$PROJECT_DIR$/src/main/java/pages/MyProfilePage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pages/SearchResultsPage.java" afterPath="$PROJECT_DIR$/src/main/java/pages/SearchResultsPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/suiteBuilder/MainSuiteBuilder.java" afterPath="$PROJECT_DIR$/src/test/java/suiteBuilder/MainSuiteBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/suiteBuilder/OlxLoginTestSuite.java" afterPath="$PROJECT_DIR$/src/test/java/suiteBuilder/OlxLoginTestSuite.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/suiteBuilder/OlxMyProfileTestSuite.java" afterPath="$PROJECT_DIR$/src/test/java/suiteBuilder/OlxMyProfileTestSuite.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/suiteBuilder/OlxSearchTestSuite.java" afterPath="$PROJECT_DIR$/src/test/java/suiteBuilder/OlxSearchTestSuite.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/suiteBuilder/SuiteBuilder.java" afterPath="$PROJECT_DIR$/src/test/java/suiteBuilder/SuiteBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/suiteBuilder/TestAttributes.java" afterPath="$PROJECT_DIR$/src/test/java/suiteBuilder/TestAttributes.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/suiteBuilder/TestSuiteTemplate.java" afterPath="$PROJECT_DIR$/src/test/java/suiteBuilder/TestSuiteTemplate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/tests/AdvertPageTest.java" afterPath="$PROJECT_DIR$/src/test/java/tests/AdvertPageTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/tests/MyProfileSettingsPageTest.java" afterPath="$PROJECT_DIR$/src/test/java/tests/MyProfileSettingsPageTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/tests/SearchResultsLocalizedTest.java" afterPath="$PROJECT_DIR$/src/test/java/tests/SearchResultsLocalizedTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/tests/SearchResultsNotLocalizedTest.java" afterPath="$PROJECT_DIR$/src/test/java/tests/SearchResultsNotLocalizedTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -817,7 +794,14 @@
       <option name="project" value="LOCAL" />
       <updated>1520617665044</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Proceed with implementation of Builder pattern. &#10;Used builder to create test suits upon existing tests.">
+      <created>1520762704026</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1520762704026</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -972,7 +956,8 @@
     <MESSAGE value="Started implementation of singleton design pattern in driver." />
     <MESSAGE value="Completed implementation of singleton design pattern in driver:&#10;-driverInstance created; &#10;-made adjustments to use multiple browsers; &#10;-adjusted test classes; &#10;-made refactoring - moved @BeforeClass and @AfterClass annotations into separate class test conditions class." />
     <MESSAGE value="Started with implementation of Builder pattern. &#10;Used builder to create test suits upon existing tests." />
-    <option name="LAST_COMMIT_MESSAGE" value="Started with implementation of Builder pattern. &#10;Used builder to create test suits upon existing tests." />
+    <MESSAGE value="Proceed with implementation of Builder pattern. &#10;Used builder to create test suits upon existing tests." />
+    <option name="LAST_COMMIT_MESSAGE" value="Proceed with implementation of Builder pattern. &#10;Used builder to create test suits upon existing tests." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
