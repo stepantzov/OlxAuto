@@ -17,7 +17,7 @@ public class MyProfilePage extends ActionsSetup {
     }
 
     public static WebElement myProfileLogOutLnk() {
-        return getElement("//*[@id='login-box-logout']/span/span", DELAY, XPATH);
+        return getElement("//div[@style='display: block;']//span[@class='link fbold']//span[text()='Выйти']", DELAY, XPATH);
     }
 
     public static WebElement myProfileNewAdvTitle() {

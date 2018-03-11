@@ -9,6 +9,8 @@ import pageActions.MainPageActions;
 import pages.LoginPage;
 import pages.MyProfilePage;
 
+import static pageActions.LoginPageActions.pressLogInFacebook;
+
 public class LoginTest extends TestConditions {
     private MainPageActions mainPageActions;
 
@@ -40,9 +42,10 @@ public class LoginTest extends TestConditions {
         mainPageActions.pressMyProfileLnk();
 
         System.out.println("myProfileLoginTest test started");
-        LoginPageActions.loginOlxFacebook(FBLOGIN, FBPASSWORD);
+        //LoginPageActions.loginOlxFacebook(FBLOGIN, FBPASSWORD);
+        pressLogInFacebook();
         Assert.assertTrue("Can't log in successfully", MyProfilePage.myProfileNewAdvTitle().isDisplayed());
-        LoginPageActions.logOutOlx();
+        mainPageActions.logOutOlx();
         System.out.println("myProfileLoginTest test has been completed.\n");
     }
 }

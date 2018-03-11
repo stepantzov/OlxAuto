@@ -11,8 +11,8 @@ public class SuiteBuilder {
 
     public TestSuiteTemplate createRestFunctionalitySuite() {
         TestSuiteTemplate lowPrioritySuite = new TestSuiteTemplate();
-        lowPrioritySuite.addTestArtifact(new OlxAdvertPageTestSuite());
         lowPrioritySuite.addTestArtifact(new OlxMyProfileTestSuite());
+        lowPrioritySuite.addTestArtifact(new OlxAdvertPageTestSuite());
 
         return lowPrioritySuite;
     }

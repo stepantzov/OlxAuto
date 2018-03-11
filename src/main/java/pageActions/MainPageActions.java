@@ -27,8 +27,9 @@ public class MainPageActions extends MainPage {
         elementClick(myProfileLink());
     }
 
-    public static void logOut() {
-    //TODO implement log out action
+    public static void logOutOlx() {
+        hoverOverLogOut(myProfileLink());
+        //elementClick(myProfileLogOutLnk());
     }
 
     public SearchResultsPageActions pressSearchButton() {
@@ -38,12 +39,12 @@ public class MainPageActions extends MainPage {
     }
 
     public static MyProfileSettingsPageActions openMyProfileSettings() {
-        hoverOver(myProfileLink(), MyProfilePage.myProfileSettingsLnk());
+        hoverOverAndClick(myProfileLink(), MyProfilePage.myProfileSettingsLnk());
 
         return new MyProfileSettingsPageActions(driver);
     }
 
-    public void clearLocalization(){
+    public void clearLocalization() {
         elementClick(clickClearLocalization());
     }
 

@@ -1,9 +1,7 @@
 package pageActions;
 
 import pages.LoginPage;
-import pages.MyProfilePage;
 
-import static pages.MainPage.myProfileLink;
 
 public class LoginPageActions extends LoginPage {
     public static void setLoginEnterField(String loginValue) {
@@ -25,19 +23,14 @@ public class LoginPageActions extends LoginPage {
         pressLoginButton();
     }
 
-    public static void loginOlxFacebook(String logVal, String passVal){
+    public static void loginOlxFacebook(String logVal, String passVal) {
         pressLogInFacebook();
         FacebookLoginPageActions.setFacebookLoginField(logVal);
         FacebookLoginPageActions.setFacebookPasswordField(passVal);
         FacebookLoginPageActions.pressFacebookLoginButton();
     }
 
-    private static void pressLogInFacebook() {
-        setImplicitWaitTime(IMPLICITDELAY);
+    public static void pressLogInFacebook() {
         elementClick(facebookBtn());
-    }
-
-    public static void logOutOlx() {
-        hoverOver(myProfileLink(), MyProfilePage.myProfileLogOutLnk());
     }
 }

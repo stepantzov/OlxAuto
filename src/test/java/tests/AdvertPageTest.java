@@ -5,21 +5,25 @@ import coreFunctions.TestConditions;
 import org.junit.Assert;
 import org.junit.Test;
 import pageActions.AdvertPageActions;
-import pageActions.LoginPageActions;
 import pageActions.MainPageActions;
+
+import static pageActions.LoginPageActions.pressLogInFacebook;
 
 public class AdvertPageTest extends TestConditions {
     private MainPageActions mainPageActions;
 
     @Test
     public void getAdvertPageTest() {
+        System.out.println("Get AdvertPage test has started. ");
+
         mainPageActions = new MainPageActions(DriverSetup.driverInstance);
         mainPageActions.pressMyProfileLnk();
-        LoginPageActions.loginOlxFacebook(FBLOGIN, FBPASSWORD);
-
-        System.out.println("\n getAdvertPage test has started. ");
+        pressLogInFacebook();
+        //loginOlxFacebook(FBLOGIN, FBPASSWORD);
         mainPageActions.pressAddNewAdvertLnk();
         Assert.assertEquals("Подать объявление на OLX", AdvertPageActions.getAdvertPageTitle());
-        System.out.println("\n getAdvertPage test has been completed.");
+        mainPageActions.logOutOlx();
+
+        System.out.println("Get AdvertPage test has been completed successfully.");
     }
 }

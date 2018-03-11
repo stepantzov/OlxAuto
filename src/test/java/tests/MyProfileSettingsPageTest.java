@@ -20,6 +20,7 @@ public class MyProfileSettingsPageTest extends TestConditions {
         System.out.println("My Profile Settings page header verification test started");
         mainPageActions.openMyProfileSettings();
         Assert.assertEquals("Настройки", MyProfileSettingsPageActions.getMyProfileSettingsHeader());
+        mainPageActions.logOutOlx();
         System.out.println("My Profile Settings page header verification test been completed successfully.\n");
     }
 }

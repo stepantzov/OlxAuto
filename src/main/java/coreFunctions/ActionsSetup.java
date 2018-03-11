@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
+import static pages.MyProfilePage.myProfileLogOutLnk;
+
 public class ActionsSetup extends DriverSetup {
     public static WebElement getElement(String selector, int timeWaiting, String typeSelector) {
         return new WebDriverWait(DriverSetup.driverInstance, setTimeWaiting(timeWaiting, DELAY)).
@@ -54,8 +56,15 @@ public class ActionsSetup extends DriverSetup {
         element.sendKeys(fieldValue);
     }
 
-    public static void hoverOver(WebElement baseElement, WebElement selectedElement) {
+    public static void hoverOverAndClick(WebElement baseElement, WebElement selectedElement) {
         Actions action = new Actions(DriverSetup.driverInstance);
         action.moveToElement(baseElement).moveToElement(selectedElement).click().build().perform();
+    }
+
+    public static void hoverOverLogOut(WebElement baseElement) {
+        //setImplicitWaitTime(IMPLICITDELAY);
+        Actions action = new Actions(DriverSetup.driverInstance);
+        action.moveToElement(baseElement).perform();
+        elementClick(myProfileLogOutLnk());
     }
 }
