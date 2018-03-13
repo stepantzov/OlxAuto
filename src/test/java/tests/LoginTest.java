@@ -43,6 +43,7 @@ public class LoginTest extends TestConditions {
         System.out.println("myProfileLoginTest test started");
         mainPageActions.pressMyProfileLnk();
         pressLogInFacebook();
+
         if (LoginPageActions.ifLoginRequired() == true) {
             LoginPageActions.loginOlxFacebook(FBLOGIN, FBPASSWORD);
         }

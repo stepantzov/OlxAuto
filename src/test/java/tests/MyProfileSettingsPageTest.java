@@ -24,6 +24,7 @@ public class MyProfileSettingsPageTest extends TestConditions {
         if (LoginPageActions.ifLoginRequired() == true) {
             LoginPageActions.loginOlxFacebook(FBLOGIN, FBPASSWORD);
         }
+
         mainPageActions.openMyProfileSettings();
         Assert.assertEquals("Настройки", MyProfileSettingsPageActions.getMyProfileSettingsHeader());
         mainPageActions.logOutOlx();

@@ -29,7 +29,6 @@ public class MainPageActions extends MainPage {
 
     public static void logOutOlx() {
         hoverOverLogOut(myProfileLink());
-        //elementClick(myProfileLogOutLnk());
     }
 
     public SearchResultsPageActions pressSearchButton() {
@@ -42,10 +41,6 @@ public class MainPageActions extends MainPage {
         hoverOverAndClick(myProfileLink(), MyProfilePage.myProfileSettingsLnk());
 
         return new MyProfileSettingsPageActions(driver);
-    }
-
-    public void clearLocalization() {
-        elementClick(clickClearLocalization());
     }
 
     public void setSearchLocalizationVal(String searchLocalizationVal) {

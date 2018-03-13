@@ -51,10 +51,13 @@ public class SearchResultsLocalizedTest extends TestConditions {
     @Test
     public void searchResultsLocalizedTest() {
         mainPageActions = new MainPageActions(DriverSetup.driverInstance);
+
         System.out.println("Search Results Localized test test started");
         mainPageActions.navigateHomePage();
+
         mainPageActions.setSearchFieldVal(searchKeyword);
         mainPageActions.setSearchLocalizationVal(searchLocale);
+
         mainPageActions.clickLocalizationSuggest();
         mainPageActions.pressSearchButton();
 
@@ -69,10 +72,13 @@ public class SearchResultsLocalizedTest extends TestConditions {
     @Test
     public void searchResultsLocalizedTestNoParameters() {
         mainPageActions = new MainPageActions(DriverSetup.driverInstance);
+
         System.out.println("Search Results Localized test test started");
         mainPageActions.navigateHomePage();
+
         mainPageActions.setSearchFieldVal("Nike");
         mainPageActions.setSearchLocalizationVal("Kiev");
+
         mainPageActions.clickLocalizationSuggest();
         mainPageActions.pressSearchButton();
 

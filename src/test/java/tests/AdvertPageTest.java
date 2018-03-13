@@ -20,6 +20,7 @@ public class AdvertPageTest extends TestConditions {
         System.out.println("Get AdvertPage test has started. ");
         mainPageActions.pressMyProfileLnk();
         pressLogInFacebook();
+
         if (LoginPageActions.ifLoginRequired() == true) {
             LoginPageActions.loginOlxFacebook(FBLOGIN, FBPASSWORD);
         }
