@@ -8,19 +8,26 @@ import pageActions.LoginPageActions;
 import pageActions.MainPageActions;
 import pageActions.MyProfileSettingsPageActions;
 
+import static pageActions.LoginPageActions.pressLogInFacebook;
+
 public class MyProfileSettingsPageTest extends TestConditions {
     private MainPageActions mainPageActions;
 
     @Test
     public void MyProfileSettingsPageHeaderVerification() {
         mainPageActions = new MainPageActions(DriverSetup.driverInstance);
-        mainPageActions.pressMyProfileLnk();
-        LoginPageActions.loginOlxFacebook(FBLOGIN, FBPASSWORD);
 
         System.out.println("My Profile Settings page header verification test started");
+        mainPageActions.pressMyProfileLnk();
+        pressLogInFacebook();
+
+        if (LoginPageActions.ifLoginRequired() == true) {
+            LoginPageActions.loginOlxFacebook(FBLOGIN, FBPASSWORD);
+        }
         mainPageActions.openMyProfileSettings();
         Assert.assertEquals("Настройки", MyProfileSettingsPageActions.getMyProfileSettingsHeader());
         mainPageActions.logOutOlx();
+
         System.out.println("My Profile Settings page header verification test been completed successfully.\n");
     }
 }

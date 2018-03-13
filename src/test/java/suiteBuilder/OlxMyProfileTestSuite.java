@@ -2,6 +2,8 @@ package suiteBuilder;
 
 import tests.MyProfileSettingsPageTest;
 
+import java.util.concurrent.TimeUnit;
+
 public class OlxMyProfileTestSuite extends LoginFunctionalityTest {
     long executionDuration;
 
@@ -22,7 +24,7 @@ public class OlxMyProfileTestSuite extends LoginFunctionalityTest {
         myProfileSettingsPageTest.MyProfileSettingsPageHeaderVerification();
         long endTime = System.nanoTime();
 
-        executionDuration = (endTime - startTime);
+        executionDuration = TimeUnit.NANOSECONDS.toSeconds(endTime - startTime);
     }
 
     @Override

@@ -62,7 +62,6 @@ public class ActionsSetup extends DriverSetup {
     }
 
     public static void hoverOverLogOut(WebElement baseElement) {
-        //setImplicitWaitTime(IMPLICITDELAY);
         Actions action = new Actions(DriverSetup.driverInstance);
         action.moveToElement(baseElement).perform();
         elementClick(myProfileLogOutLnk());

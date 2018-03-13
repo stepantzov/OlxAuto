@@ -2,7 +2,6 @@ package pageActions;
 
 import pages.LoginPage;
 
-
 public class LoginPageActions extends LoginPage {
     public static void setLoginEnterField(String loginValue) {
         sendKeys(loginEnterFld(), loginValue);
@@ -24,7 +23,6 @@ public class LoginPageActions extends LoginPage {
     }
 
     public static void loginOlxFacebook(String logVal, String passVal) {
-        pressLogInFacebook();
         FacebookLoginPageActions.setFacebookLoginField(logVal);
         FacebookLoginPageActions.setFacebookPasswordField(passVal);
         FacebookLoginPageActions.pressFacebookLoginButton();
@@ -32,5 +30,9 @@ public class LoginPageActions extends LoginPage {
 
     public static void pressLogInFacebook() {
         elementClick(facebookBtn());
+    }
+
+    public static boolean ifLoginRequired() {
+        return ifLoginRequiredIndicator();
     }
 }

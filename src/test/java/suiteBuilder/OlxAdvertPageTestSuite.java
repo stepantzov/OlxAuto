@@ -2,6 +2,8 @@ package suiteBuilder;
 
 import tests.AdvertPageTest;
 
+import java.util.concurrent.TimeUnit;
+
 public class OlxAdvertPageTestSuite extends LoginFunctionalityTest {
     long executionDuration;
 
@@ -22,7 +24,7 @@ public class OlxAdvertPageTestSuite extends LoginFunctionalityTest {
         advertPageTest.getAdvertPageTest();
         long endTime = System.nanoTime();
 
-        executionDuration = (endTime - startTime);
+        executionDuration = TimeUnit.NANOSECONDS.toSeconds(endTime - startTime);
     }
 
     @Override

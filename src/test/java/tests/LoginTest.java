@@ -39,13 +39,17 @@ public class LoginTest extends TestConditions {
     @Test
     public void myProfileLoginSuccessfulTest() {
         mainPageActions = new MainPageActions(DriverSetup.driverInstance);
-        mainPageActions.pressMyProfileLnk();
 
         System.out.println("myProfileLoginTest test started");
-        //LoginPageActions.loginOlxFacebook(FBLOGIN, FBPASSWORD);
+        mainPageActions.pressMyProfileLnk();
         pressLogInFacebook();
+        if (LoginPageActions.ifLoginRequired() == true) {
+            LoginPageActions.loginOlxFacebook(FBLOGIN, FBPASSWORD);
+        }
+
         Assert.assertTrue("Can't log in successfully", MyProfilePage.myProfileNewAdvTitle().isDisplayed());
         mainPageActions.logOutOlx();
+
         System.out.println("myProfileLoginTest test has been completed.\n");
     }
 }

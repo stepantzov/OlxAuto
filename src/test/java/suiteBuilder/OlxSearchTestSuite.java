@@ -3,6 +3,8 @@ package suiteBuilder;
 import tests.SearchResultsLocalizedTest;
 import tests.SearchResultsNotLocalizedTest;
 
+import java.util.concurrent.TimeUnit;
+
 public class OlxSearchTestSuite extends SearchFunctionalityTest {
     long executionDuration;
 
@@ -26,7 +28,7 @@ public class OlxSearchTestSuite extends SearchFunctionalityTest {
         searchResultsNotLocalizedTest.searchResultsNotLocalizedTestNoParameters();
         long endTime = System.nanoTime();
 
-        executionDuration = (endTime - startTime);
+        executionDuration = TimeUnit.NANOSECONDS.toSeconds(endTime - startTime);
     }
 
     @Override

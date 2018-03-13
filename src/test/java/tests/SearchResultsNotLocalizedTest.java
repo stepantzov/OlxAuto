@@ -67,6 +67,6 @@ public class SearchResultsNotLocalizedTest extends TestConditions {
         Assert.assertTrue("No results present.", results.contains("Найдено"));
         System.out.println(results);
         mainPageActions.navigateHomePage();
-        System.out.println("Search Results Found test has been completed.\n");
+        System.out.println("Search Results Found test has been completed Successfully.\n");
     }
 }

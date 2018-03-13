@@ -2,6 +2,8 @@ package suiteBuilder;
 
 import tests.LoginTest;
 
+import java.util.concurrent.TimeUnit;
+
 public class OlxLoginTestSuite extends LoginFunctionalityTest {
     long executionDuration;
 
@@ -24,7 +26,7 @@ public class OlxLoginTestSuite extends LoginFunctionalityTest {
         loginTest.myProfileLoginSuccessfulTest();
         long endTime = System.nanoTime();
 
-        executionDuration = (endTime - startTime);
+        executionDuration = TimeUnit.NANOSECONDS.toSeconds(endTime - startTime);
     }
 
     @Override
