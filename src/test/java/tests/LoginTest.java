@@ -33,7 +33,7 @@ public class LoginTest extends TestConditions {
         LoginPageActions.pressLoginButton();
         Assert.assertTrue("Login validation is absent", LoginPage.loginValidationAlrt().isDisplayed());
         Assert.assertTrue("Password validation is absent", LoginPage.passwordValidationAlrt().isDisplayed());
-        System.out.println("My Profile Validation Verification test has been completed.\n");
+        System.out.println("My Profile Validation Verification test has been completed.");
     }
 
     @Test

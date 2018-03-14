@@ -38,7 +38,7 @@ public class SearchResultsNotLocalizedTest extends TestConditions {
     public void searchResultsNotLocalizedTest() {
         mainPageActions = new MainPageActions(DriverSetup.driverInstance);
         mainPageActions.navigateHomePage();
-        System.out.println("\nSearch Results Test test started.");
+        System.out.println("Search Results Test test started.");
         System.out.format("Searching for key value='%s' \n", searchKeyword);
 
         mainPageActions.setSearchFieldVal(searchKeyword);

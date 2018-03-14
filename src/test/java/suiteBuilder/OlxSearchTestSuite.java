@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 public class OlxSearchTestSuite extends SearchFunctionalityTest {
     long executionDuration;
+    int testCasesCount = 2;
 
     @Override
     public String name() {
@@ -34,5 +35,10 @@ public class OlxSearchTestSuite extends SearchFunctionalityTest {
     @Override
     public long executionTime() {
         return executionDuration;
+    }
+
+    @Override
+    public int testCasesCount() {
+        return testCasesCount;
     }
 }

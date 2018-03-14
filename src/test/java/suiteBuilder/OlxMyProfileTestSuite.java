@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 public class OlxMyProfileTestSuite extends LoginFunctionalityTest {
     long executionDuration;
+    int testCasesCount = 1;
 
     @Override
     public String name() {
@@ -30,5 +31,10 @@ public class OlxMyProfileTestSuite extends LoginFunctionalityTest {
     @Override
     public long executionTime() {
         return executionDuration;
+    }
+
+    @Override
+    public int testCasesCount() {
+        return testCasesCount;
     }
 }

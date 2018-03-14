@@ -10,4 +10,6 @@ public interface TestAttributes {
     void executeScope();
 
     long executionTime();
+
+    int testCasesCount();
 }

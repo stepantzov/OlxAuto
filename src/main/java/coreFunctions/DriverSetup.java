@@ -16,7 +16,7 @@ public class DriverSetup extends GlobalDefinitions {
                 driverInstance = new ChromeDriver();
 
             } else if (browserType.equalsIgnoreCase("FF")) {
-                System.out.println("Launching FireFox driver with new profile..");
+                System.out.println("Launching FireFox driver with new profile...\n");
 
                 driverInstance = new FirefoxDriver();
 
