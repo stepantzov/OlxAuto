@@ -7,5 +7,5 @@ public interface PrintStreamReport {
 
     void webOutput() throws FileNotFoundException;
 
-    void richTextFormat() throws FileNotFoundException;
+    void richTextOutput() throws FileNotFoundException;
 }
