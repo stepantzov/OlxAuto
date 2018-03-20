@@ -1,6 +1,7 @@
 package testResultsRepoting;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class PrintReportAdapter implements PrintStreamReport {
 
@@ -11,7 +12,7 @@ public class PrintReportAdapter implements PrintStreamReport {
     }
 
     @Override
-    public void textOutput() throws FileNotFoundException {
+    public void textOutput() throws IOException {
         printWriterReport.txtFileResultsOutput();
     }
 

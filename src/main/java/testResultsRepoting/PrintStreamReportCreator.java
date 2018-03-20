@@ -1,28 +1,27 @@
 package testResultsRepoting;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.PrintStream;
-
 public class PrintStreamReportCreator implements PrintStreamReport {
     @Override
-    public void textOutput() throws FileNotFoundException {
+    public void textOutput() {
         System.out.println("Saving results to text format.");
-        PrintStream out = new PrintStream(new FileOutputStream("textOutput.txt"));
-        System.setOut(out);
+        String outputType = "textOutput.txt";
+
+        GeneralPrintStream.createSpecificPrintStream(outputType);
     }
 
     @Override
-    public void webOutput() throws FileNotFoundException {
+    public void webOutput() {
         System.out.println("Saving results to web format.");
-        PrintStream out = new PrintStream(new FileOutputStream("webOutput.html"));
-        System.setOut(out);
+        String outputType = "webOutput.html";
+
+        GeneralPrintStream.createSpecificPrintStream(outputType);
     }
 
     @Override
-    public void richTextOutput() throws FileNotFoundException {
+    public void richTextOutput() {
         System.out.println("Saving results to rich text format.");
-        PrintStream out = new PrintStream(new FileOutputStream("richTextOutput.rtf"));
-        System.setOut(out);
+        String outputType = "webOutput.html";
+
+        GeneralPrintStream.createSpecificPrintStream(outputType);
     }
 }

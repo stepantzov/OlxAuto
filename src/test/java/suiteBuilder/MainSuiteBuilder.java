@@ -2,6 +2,10 @@ package suiteBuilder;
 
 import coreFunctions.TestConditions;
 import org.junit.Test;
+import testResultsRepoting.PrintReportAdapter;
+import testResultsRepoting.PrintWriterReportCreator;
+
+import java.io.FileNotFoundException;
 
 public class MainSuiteBuilder extends TestConditions {
     SuiteBuilder suiteBuilder = new SuiteBuilder();
@@ -30,5 +34,13 @@ public class MainSuiteBuilder extends TestConditions {
                 restFunctionalitySuite.testSuiteTestCasesCount());
         System.out.format("Low priority suite execution time: %d seconds.\n", restFunctionalitySuite.getSuiteExecutionTime());
         System.out.format("Low priority suite execution completed.\n________________________\n");
+
+        PrintWriterReportCreator printWriterReportCreator = new PrintWriterReportCreator();
+        PrintReportAdapter printReportAdapter = new PrintReportAdapter(printWriterReportCreator);
+        try {
+            printReportAdapter.richTextOutput();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }

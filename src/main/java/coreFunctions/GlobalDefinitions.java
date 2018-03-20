@@ -20,4 +20,6 @@ public class GlobalDefinitions {
     protected static final Object CSS = "css";
 
     public static final String FILE_NAME = "C:\\Maven\\OlxAuto\\parameters.txt";
+    public static final String RESULTS_OUTPUT = "C:\\Maven\\OlxAuto\\parameters.txt";
+
 }
