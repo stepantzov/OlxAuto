@@ -32,4 +32,12 @@ lib/
 annotations.xml
 src/main/resources/
 /.idea/
+
 /target/
+
+/parameters.txt
+/annotations.xml
+/OlxAuto.iml
+/richTextOutput.rtf
+/textOutput.txt
+/txtFileResultsOutput.txt
