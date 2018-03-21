@@ -30,3 +30,5 @@ lib/
 .idea/workspace.xml
 annotations.xml
 src/main/resources/
+/.idea/
+/target/
