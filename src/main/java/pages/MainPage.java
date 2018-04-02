@@ -4,6 +4,7 @@ import coreFunctions.ActionsSetup;
 import org.openqa.selenium.WebElement;
 
 public class MainPage extends ActionsSetup {
+    protected String mainPageUrlPattern = "https://www.olx.ua/";
 
     public static WebElement myProfileLink() {
         return getElement("//*[@id='topLoginLink']/span/strong", DELAY, XPATH);
@@ -21,8 +22,8 @@ public class MainPage extends ActionsSetup {
         return getElement("//*[@id='cityField']", DELAY, XPATH);
     }
 
-    public WebElement myGeoSuggestion() {
-        return getElement("//ul[@class='suggestgeo bgfff normal br-3 abs']", DELAY, XPATH);
+    public WebElement myLocalizationSuggestion() {
+        return getElement("//*[@id='autosuggest-geo-ul']", DELAY, XPATH);
     }
 
     public WebElement addNewAdvertLnk() {

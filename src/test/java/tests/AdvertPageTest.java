@@ -32,3 +32,20 @@ public class AdvertPageTest extends TestConditions {
         System.out.println("Get AdvertPage test has been completed successfully.");
     }
 }
+
+  /*  @Test
+    public void advertPageUrlVerificationTest(){
+        mainPageActions = new MainPageActions(DriverSetup.driverInstance);
+
+        System.out.println("Get AdvertPage test has started. ");
+        mainPageActions.pressMyProfileLnk();
+
+        if (LoginPageActions.ifLoginRequired() == true) {
+            LoginPageActions.loginOlxFacebook(FBLOGIN, FBPASSWORD);
+
+        }
+
+        mainPageActions.pressAddNewAdvertLnk();
+        UrlInterpreter.verifyIfUrlLocaleCorrect();
+        Assert.assertEquals("Подать объявление на OLX", AdvertPageActions.getAdvertPageTitle());
+*/

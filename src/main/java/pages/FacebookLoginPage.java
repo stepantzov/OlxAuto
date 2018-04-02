@@ -6,13 +6,14 @@ import org.openqa.selenium.WebElement;
 
 public class FacebookLoginPage extends ActionsSetup {
     protected static WebDriver driver;
+    protected static String facebookLoginPageUrlPattern = "www.facebook.com";
 
     public FacebookLoginPage(WebDriver driver) {
         this.driver = driver;
     }
 
     public static WebElement loginEnterFld() {
-        return getElement("//div[@id='email_container']//input[@aria-label='Email or Phone Number']", DELAY, XPATH);
+        return getElement("//*[@id='email']", DELAY, XPATH);
     }
 
     public static WebElement passwordFld() {

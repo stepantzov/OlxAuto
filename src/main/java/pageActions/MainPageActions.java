@@ -7,6 +7,10 @@ import pages.MyProfilePage;
 public class MainPageActions extends MainPage {
     protected static WebDriver driver;
 
+public String getMainPageUrlPattern(){
+    return mainPageUrlPattern;
+}
+
     public MainPageActions(WebDriver driver) {
         this.driver = driver;
     }
@@ -49,7 +53,7 @@ public class MainPageActions extends MainPage {
     }
 
     public void clickLocalizationSuggest() {
-        elementClick(myGeoSuggestion());
+        elementClick(myLocalizationSuggestion());
     }
 
     public void navigateHomePage() {

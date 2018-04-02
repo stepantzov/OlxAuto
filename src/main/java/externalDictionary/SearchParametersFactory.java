@@ -2,7 +2,6 @@ package externalDictionary;
 
 public class SearchParametersFactory {
     public ExternalDictionary getDictionary(String parametersType) {
-        //TODO change to switch
         if (parametersType == null) {
             return null;
         }

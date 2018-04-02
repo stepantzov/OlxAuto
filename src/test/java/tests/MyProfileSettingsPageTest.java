@@ -1,6 +1,5 @@
 package tests;
 
-import coreFunctions.DriverSetup;
 import coreFunctions.TestConditions;
 import org.junit.Assert;
 import org.junit.Test;
@@ -15,7 +14,7 @@ public class MyProfileSettingsPageTest extends TestConditions {
 
     @Test
     public void MyProfileSettingsPageHeaderVerification() {
-        mainPageActions = new MainPageActions(DriverSetup.driverInstance);
+        mainPageActions = new MainPageActions(driverInstance);
 
         System.out.println("My Profile Settings page header verification test started");
         mainPageActions.pressMyProfileLnk();

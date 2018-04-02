@@ -11,11 +11,11 @@ public class MyProfileSettingsPage extends ActionsSetup {
         this.driver = driver;
     }
 
-    public static WebElement myProfileAdsHeader(){
-        return getElement(".//*[@id='usertabs']//*[@class='x-large fbold lheight20']", DELAY, XPATH);
+    public static WebElement myProfileAdsHeader() {
+        return getElement("//*[@id='usertabs']", DELAY, XPATH);
     }
 
-    public static WebElement deleteMyProfileLink(){
+    public static WebElement deleteMyProfileLink() {
         return getElement(".//*[@id='se_deleteAccount']/span", DELAY, XPATH);
     }
 }

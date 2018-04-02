@@ -30,6 +30,6 @@ public class LoginPage extends ActionsSetup {
     }
 
     public static boolean ifLoginRequiredIndicator() {
-        return (driverInstance.findElements(By.xpath("//span[text()='Log into Facebook']")).size() !=0);
+        return (driverInstance.findElements(By.xpath("//*[@id='email']")).size() !=0);
     }
 }

@@ -4,6 +4,8 @@ import coreFunctions.ActionsSetup;
 import org.openqa.selenium.WebElement;
 
 public class MyProfilePage extends ActionsSetup {
+    protected String myProfileSettingsPageUrlPattern = "/myaccount/settings/";
+
     public WebElement myProfilePageHeaderText() {
         return getElement("//*[@id='login_tab']", DELAY, XPATH);
     }
@@ -21,6 +23,6 @@ public class MyProfilePage extends ActionsSetup {
     }
 
     public static WebElement myProfileNewAdvTitle() {
-        return getElement("//a[@id='postNewAdLink']//span[text()='Подать объявление']", DELAY, XPATH);
+        return getElement("//*[@id='postNewAdLink']/span", DELAY, XPATH);
     }
 }
