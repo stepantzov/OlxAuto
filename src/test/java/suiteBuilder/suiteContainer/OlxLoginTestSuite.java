@@ -1,28 +1,31 @@
-package suiteBuilder;
+package suiteBuilder.suiteContainer;
 
-import tests.MyProfileSettingsPageTest;
+import suiteBuilder.abstractFunctionalityContainer.LoginFunctionalityTest;
+import tests.LoginTest;
 
 import java.util.concurrent.TimeUnit;
 
-public class OlxMyProfileTestSuite extends LoginFunctionalityTest {
+public class OlxLoginTestSuite extends LoginFunctionalityTest {
     long executionDuration;
-    int testCasesCount = 1;
+    int testCasesCount = 3;
 
     @Override
     public String name() {
-        return "MyProfileTestSuite";
+        return "OlxLoginTestSuite";
     }
 
     @Override
     public String priority() {
-        return "medium";
+        return "High";
     }
 
     @Override
     public void executeScope() {
         long startTime = System.nanoTime();
-        MyProfileSettingsPageTest myProfileSettingsPageTest = new MyProfileSettingsPageTest();
-        myProfileSettingsPageTest.MyProfileSettingsPageHeaderVerification();
+        LoginTest loginTest = new LoginTest();
+        loginTest.myProfileValidationVerification();
+        loginTest.myProfileFacebookButtonPresent();
+        loginTest.myProfileLoginSuccessfulTest();
         long endTime = System.nanoTime();
 
         executionDuration = TimeUnit.NANOSECONDS.toSeconds(endTime - startTime);
@@ -30,6 +33,7 @@ public class OlxMyProfileTestSuite extends LoginFunctionalityTest {
 
     @Override
     public long executionTime() {
+
         return executionDuration;
     }
 

@@ -1,7 +1,7 @@
 package coreFunctions;
 
 public class GlobalDefinitions {
-    public static final String browserType = "FF";
+    public static final String browserType = "chrome";
     public static final String CHROME_DRIVER_PATH = "C:\\Program Files (x86)\\Google\\Chrome\\";
     public static final String IE_DRIVER_PATH = "C:\\iewebdriver\\";
 

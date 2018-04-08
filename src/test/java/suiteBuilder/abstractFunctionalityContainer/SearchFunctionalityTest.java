@@ -1,4 +1,8 @@
-package suiteBuilder;
+package suiteBuilder.abstractFunctionalityContainer;
+
+import suiteBuilder.testAreaContainer.SearchTestArea;
+import suiteBuilder.testAreaContainer.TestArea;
+import suiteBuilder.testSuiteBuilder.TestAttributes;
 
 public abstract class SearchFunctionalityTest implements TestAttributes {
     @Override

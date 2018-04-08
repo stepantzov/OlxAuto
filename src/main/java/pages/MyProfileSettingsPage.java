@@ -12,7 +12,7 @@ public class MyProfileSettingsPage extends ActionsSetup {
     }
 
     public static WebElement myProfileAdsHeader() {
-        return getElement("//*[@id='usertabs']", DELAY, XPATH);
+        return getElement("//h2[@class='x-large fbold lheight20']", DELAY, XPATH);
     }
 
     public static WebElement deleteMyProfileLink() {

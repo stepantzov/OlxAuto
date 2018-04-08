@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.logging.*;
 
 public class GeneralLogger {
-    public static void createSpecificLogger(String loggerType){
+    public static void createSpecificLogger(String loggerType) {
         Logger textLogger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
         LogManager.getLogManager().reset();
@@ -20,6 +20,7 @@ public class GeneralLogger {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         fileHandler.setLevel(Level.ALL);
         textLogger.addHandler(fileHandler);
         textLogger.log(Level.INFO, "text log");

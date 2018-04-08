@@ -12,10 +12,11 @@ import pages.MyProfilePage;
 import static pageActions.LoginPageActions.pressLogInFacebook;
 
 public class LoginTest extends TestConditions {
-    private MainPageActions mainPageActions;
 
     @Test
     public void myProfileFacebookButtonPresent() {
+        MainPageActions mainPageActions;
+
         mainPageActions = new MainPageActions(DriverSetup.driverInstance);
         mainPageActions.pressMyProfileLnk();
 
@@ -26,6 +27,8 @@ public class LoginTest extends TestConditions {
 
     @Test
     public void myProfileValidationVerification() {
+        MainPageActions mainPageActions;
+
         mainPageActions = new MainPageActions(DriverSetup.driverInstance);
         mainPageActions.pressMyProfileLnk();
 
@@ -38,6 +41,8 @@ public class LoginTest extends TestConditions {
 
     @Test
     public void myProfileLoginSuccessfulTest() {
+        MainPageActions mainPageActions;
+
         mainPageActions = new MainPageActions(DriverSetup.driverInstance);
 
         System.out.println("myProfileLoginTest test started");

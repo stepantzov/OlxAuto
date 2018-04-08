@@ -1,5 +1,6 @@
-package suiteBuilder;
+package suiteBuilder.suiteContainer;
 
+import suiteBuilder.abstractFunctionalityContainer.SearchFunctionalityTest;
 import tests.SearchResultsLocalizedTest;
 import tests.SearchResultsNotLocalizedTest;
 

@@ -1,4 +1,9 @@
-package suiteBuilder;
+package suiteBuilder.testSuiteBuilder;
+
+import suiteBuilder.suiteContainer.OlxAdvertPageTestSuite;
+import suiteBuilder.suiteContainer.OlxLoginTestSuite;
+import suiteBuilder.suiteContainer.OlxMyProfileTestSuite;
+import suiteBuilder.suiteContainer.OlxSearchTestSuite;
 
 public class SuiteBuilder {
     public TestSuiteTemplate createCoreFunctionalitySuite() {

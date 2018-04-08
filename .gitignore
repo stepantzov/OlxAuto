@@ -41,3 +41,5 @@ src/main/resources/
 /richTextOutput.rtf
 /textOutput.txt
 /txtFileResultsOutput.txt
+!/parameters.txt
+rtfFileResultsOutput.rtf

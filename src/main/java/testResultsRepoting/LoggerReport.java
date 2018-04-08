@@ -2,7 +2,7 @@ package testResultsRepoting;
 
 import java.io.IOException;
 
-public interface PrintWriterReport {
+public interface LoggerReport {
     void txtFileResultsOutput() throws IOException;
 
     void htmlFileResultsOutput();

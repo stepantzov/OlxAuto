@@ -1,4 +1,6 @@
-package suiteBuilder;
+package suiteBuilder.testSuiteBuilder;
+
+import suiteBuilder.testAreaContainer.TestArea;
 
 public interface TestAttributes {
     String name();

@@ -10,10 +10,11 @@ import pageActions.MyProfileSettingsPageActions;
 import static pageActions.LoginPageActions.pressLogInFacebook;
 
 public class MyProfileSettingsPageTest extends TestConditions {
-    private MainPageActions mainPageActions;
 
     @Test
     public void MyProfileSettingsPageHeaderVerification() {
+        MainPageActions mainPageActions;
+
         mainPageActions = new MainPageActions(driverInstance);
 
         System.out.println("My Profile Settings page header verification test started");

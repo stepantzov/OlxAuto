@@ -1,4 +1,4 @@
-package suiteBuilder;
+package suiteBuilder.testSuiteBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
