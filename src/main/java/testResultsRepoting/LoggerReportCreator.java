@@ -1,6 +1,6 @@
 package testResultsRepoting;
 
-public class PrintWriterReportCreator implements PrintWriterReport {
+public class LoggerReportCreator implements LoggerReport {
     @Override
     public void txtFileResultsOutput() {
         String fileName = "txtFileResultsOutput.txt";
