@@ -23,7 +23,7 @@ public class MainPage extends ActionsSetup {
     }
 
     public WebElement myLocalizationSuggestion() {
-        return getElement("//*[@id='autosuggest-geo-ul']", DELAY, XPATH);
+        return getVisibleElement("//*[@id='autosuggest-geo-ul']", DELAY, XPATH);
     }
 
     public WebElement addNewAdvertLnk() {

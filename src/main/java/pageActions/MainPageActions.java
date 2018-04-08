@@ -7,9 +7,9 @@ import pages.MyProfilePage;
 public class MainPageActions extends MainPage {
     protected static WebDriver driver;
 
-public String getMainPageUrlPattern(){
-    return mainPageUrlPattern;
-}
+    public String getMainPageUrlPattern() {
+        return mainPageUrlPattern;
+    }
 
     public MainPageActions(WebDriver driver) {
         this.driver = driver;
@@ -55,6 +55,7 @@ public String getMainPageUrlPattern(){
     public void clickLocalizationSuggest() {
         elementClick(myLocalizationSuggestion());
     }
+
 
     public void navigateHomePage() {
         elementClick(homePageLogo());

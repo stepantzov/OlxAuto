@@ -12,6 +12,7 @@ import static pages.MyProfilePage.myProfileLogOutLnk;
 
 public class ActionsSetup extends DriverSetup {
     public static WebElement getElement(String selector, int timeWaiting, String typeSelector) {
+
         return new WebDriverWait(driverInstance, setTimeWaiting(timeWaiting, DELAY)).
                 until(ExpectedConditions.presenceOfElementLocated(bySelector(selector, typeSelector)));
     }
@@ -34,6 +35,7 @@ public class ActionsSetup extends DriverSetup {
         if (waitingTime == 0) {
             waitingTime = defaultDelay;
         }
+
         return waitingTime;
     }
 
@@ -43,6 +45,7 @@ public class ActionsSetup extends DriverSetup {
 
     public static String getText(WebElement element) {
         setImplicitWaitTime(IMPLICITDELAY);
+
         return element.getText();
     }
 
@@ -65,5 +68,11 @@ public class ActionsSetup extends DriverSetup {
         Actions action = new Actions(DriverSetup.driverInstance);
         action.moveToElement(baseElement).perform();
         elementClick(myProfileLogOutLnk());
+    }
+
+    public static WebElement getVisibleElement(String selector, int timeWaiting, String typeSelector) {
+        WebDriverWait wait = new WebDriverWait(driverInstance, 10);
+
+        return (wait.until(ExpectedConditions.visibilityOfElementLocated(bySelector(selector, typeSelector))));
     }
 }
