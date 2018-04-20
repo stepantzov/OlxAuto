@@ -12,7 +12,7 @@ import static pageActions.LoginPageActions.pressLogInFacebook;
 public class MyProfileSettingsPageTest extends TestConditions {
 
     @Test
-    public void MyProfileSettingsPageHeaderVerification() {
+    public void myProfileSettingsPageHeaderVerification() {
         MainPageActions mainPageActions;
 
         mainPageActions = new MainPageActions(driverInstance);
