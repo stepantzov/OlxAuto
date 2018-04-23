@@ -1,7 +1,6 @@
 package utils;
 
 public class PageUrlPattenVerifier implements UrlVerifier {
-
     private UrlVerifier expectedUrl = null;
     private UrlVerifier actualUrl = null;
 

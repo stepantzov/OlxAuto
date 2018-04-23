@@ -9,6 +9,6 @@ public class AdvertPage extends ActionsSetup {
     protected static String advertPageUrlLocale;
 
     public static WebElement advertPageTitle() {
-        return getElement("//h1[@class='c000 x-large pding10 rel fleft']", DELAY, XPATH);
+        return getElement("//h1[contains(@class, 'c000 x-large pding10 rel fleft')]", DELAY, XPATH);
     }
 }

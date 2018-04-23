@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import pages.FacebookLoginPage;
 
 public class FacebookLoginPageActions extends FacebookLoginPage {
-
     public String getFacebookLoginPageUrlPattern (){
         return facebookLoginPageUrlPattern;
     }

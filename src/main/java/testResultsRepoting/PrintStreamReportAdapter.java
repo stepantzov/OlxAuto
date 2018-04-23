@@ -4,7 +4,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class PrintStreamReportAdapter implements PrintStreamReport {
-
     LoggerReport loggerReport;
 
     public PrintStreamReportAdapter(LoggerReport newLoggerReport) {
