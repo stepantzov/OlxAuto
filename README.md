@@ -12,7 +12,8 @@ Maven;
 Junit
 
 ### Installing
-Just download from git repo; 
+Just download from git repo;
+Change driverPath variable - a location of Chromedriver to your local chromedriver path;
 Open windows command line; 
 Navigate to the designated catalog with project;
 Run next command in command line: 
@@ -29,7 +30,5 @@ Tests will run automatically. Star and ending of the test will be highlighted in
 
 
 ## Authors
-
 Ivan Stepantsov 
-
 
