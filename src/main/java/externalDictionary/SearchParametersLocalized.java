@@ -3,7 +3,6 @@ package externalDictionary;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class SearchParametersLocalized implements ExternalDictionary {
     @Override
     public List getSearchParameter() {

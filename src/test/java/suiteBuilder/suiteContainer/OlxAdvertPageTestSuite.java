@@ -1,6 +1,6 @@
 package suiteBuilder.suiteContainer;
 
-import suiteBuilder.abstractFunctionalityContainer.LoginFunctionalityTest;
+import suiteBuilder.functionalityContainer.LoginFunctionalityTest;
 import tests.AdvertPageTest;
 
 import java.util.concurrent.TimeUnit;

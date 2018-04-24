@@ -5,14 +5,12 @@ public class SearchParametersFactory {
         if (parametersType == null) {
             return null;
         }
-
         if (parametersType.equalsIgnoreCase("PARAMETERSLOCALIZED")) {
             return new SearchParametersLocalized();
 
         } else if (parametersType.equalsIgnoreCase("PARAMETERSNOTLOCALIZED")) {
             return new SearchParametersNotLocalized();
         }
-
         return null;
     }
 }

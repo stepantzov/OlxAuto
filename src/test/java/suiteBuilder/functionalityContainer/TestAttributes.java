@@ -1,4 +1,4 @@
-package suiteBuilder.testSuiteBuilder;
+package suiteBuilder.functionalityContainer;
 
 import suiteBuilder.testAreaContainer.TestArea;
 

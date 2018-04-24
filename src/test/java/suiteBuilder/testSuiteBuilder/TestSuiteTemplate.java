@@ -1,5 +1,7 @@
 package suiteBuilder.testSuiteBuilder;
 
+import suiteBuilder.functionalityContainer.TestAttributes;
+
 import java.util.ArrayList;
 import java.util.List;
 
