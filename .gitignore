@@ -21,7 +21,7 @@
 *.txt
 *.rtf
 *.iml
-annotations.xml
+*.xml
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
@@ -29,7 +29,6 @@ hs_err_pid*
 out/
 lib/
 
-/OlxAuto.iml
 /target/
 /.idea/
 
