@@ -1,9 +1,8 @@
 package tests;
 
-import coreFunctions.DriverSetup;
 import coreFunctions.TestConditions;
 import org.junit.Assert;
-import org.junit.Test;
+import org.testng.annotations.Test;
 import pageActions.AdvertPageActions;
 import pageActions.LoginPageActions;
 import pageActions.MainPageActions;
@@ -15,7 +14,7 @@ public class AdvertPageTest extends TestConditions {
     @Test
     public void getAdvertPageTest() {
         MainPageActions mainPageActions;
-        mainPageActions = new MainPageActions(DriverSetup.driverInstance);
+        mainPageActions = new MainPageActions(driverInstance);
 
         System.out.println("Get AdvertPage test has started. ");
         mainPageActions.pressMyProfileLnk();

@@ -2,7 +2,7 @@ package tests;
 
 import coreFunctions.TestConditions;
 import org.junit.Assert;
-import org.junit.Test;
+import org.testng.annotations.Test;
 import pageActions.LoginPageActions;
 import pageActions.MainPageActions;
 import pageActions.MyProfileSettingsPageActions;

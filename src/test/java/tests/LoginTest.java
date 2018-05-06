@@ -3,7 +3,7 @@ package tests;
 import coreFunctions.DriverSetup;
 import coreFunctions.TestConditions;
 import org.junit.Assert;
-import org.junit.Test;
+import org.testng.annotations.Test;
 import pageActions.LoginPageActions;
 import pageActions.MainPageActions;
 import pages.LoginPage;
@@ -43,7 +43,7 @@ public class LoginTest extends TestConditions {
     public void myProfileLoginSuccessfulTest() {
         MainPageActions mainPageActions;
 
-        mainPageActions = new MainPageActions(DriverSetup.driverInstance);
+        mainPageActions = new MainPageActions(driverInstance);
 
         System.out.println("myProfileLoginTest test started");
         mainPageActions.pressMyProfileLnk();
