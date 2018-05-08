@@ -1,10 +1,10 @@
 package coreFunctions;
 
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 public class TestConditions extends DriverSetup {
-    @BeforeSuite
+    @BeforeClass
     public static void initializeTestBaseSetup() {
         try {
             DriverSetup.initDriver(URL);
@@ -13,7 +13,7 @@ public class TestConditions extends DriverSetup {
         }
     }
 
-    @AfterSuite
+    @AfterClass
     public static void tearDown() {
         System.out.println("Closing browser. ");
         driverInstance.quit();
