@@ -21,6 +21,7 @@ public class Hooks {
     @After
     public static void afterScenario() {
         System.out.println("Closing browser. ");
+        driverInstance.manage().deleteAllCookies();
         driverInstance.quit();
         driverInstance = null;
     }
