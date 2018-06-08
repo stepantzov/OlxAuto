@@ -1,4 +1,4 @@
-Feature: Olx login feature with facebook login
+Feature: Olx login feature
   As a  Customer I want to be able to login to olx site successfully
 
   Scenario: olx login to facebook
