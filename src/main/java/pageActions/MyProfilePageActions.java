@@ -14,4 +14,8 @@ public class MyProfilePageActions extends MyProfilePage {
     public String getMyProfilePageText() {
         return ActionsSetup.getText(myProfilePageHeaderText());
     }
+
+    public boolean verifyIfCustomerLoggedSuccessfully() {
+        return myProfileNewAdvTitle().isDisplayed();
+    }
 }

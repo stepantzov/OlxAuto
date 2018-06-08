@@ -11,7 +11,7 @@ public class MyProfilePage extends ActionsSetup {
     }
 
     public static WebElement myProfileSettingsLnk() {
-        return getElement("//*[@id='login-box-settings']", DELAY, XPATH);
+        return getElement("//*[@id='olxCucumber.steps-box-settings']", DELAY, XPATH);
     }
 
     public static WebElement facebookLoginButton() {

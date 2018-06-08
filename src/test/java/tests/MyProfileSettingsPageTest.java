@@ -22,7 +22,7 @@ public class MyProfileSettingsPageTest extends TestConditions {
         pressLogInFacebook();
 
         if (LoginPageActions.ifLoginRequired() == true) {
-            LoginPageActions.loginOlxFacebook(FBLOGIN, FBPASSWORD);
+            LoginPageActions.logInOlxWithCorrectCredentials(FBLOGIN, FBPASSWORD);
         }
 
         mainPageActions.openMyProfileSettings();

@@ -17,7 +17,7 @@ public class GlobalDefinitions {
     public static final String FBPASSWORD = "123ZZrorZakon1994";
 
     protected static final String XPATH = "xpath";
-    protected static final Object CSS = "css";
+    protected static final String CSS = "css";
 
     public static final String FILE_NAME = "C:\\Maven\\OlxAuto\\parameters.txt";
     public static final String RESULTS_OUTPUT = "C:\\Maven\\OlxAuto\\parameters.txt";

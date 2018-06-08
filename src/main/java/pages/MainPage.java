@@ -4,8 +4,6 @@ import coreFunctions.ActionsSetup;
 import org.openqa.selenium.WebElement;
 
 public class MainPage extends ActionsSetup {
-    protected String mainPageUrlPattern = "https://www.olx.ua/";
-
     public static WebElement myProfileLink() {
         return getElement("//*[@id='topLoginLink']/span/strong", DELAY, XPATH);
     }

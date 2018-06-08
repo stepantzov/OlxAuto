@@ -13,8 +13,4 @@ public class AdvertPageActions extends AdvertPage {
     public static String getAdvertPageTitle() {
         return getText(advertPageTitle());
     }
-
-    public String getgetAdvertPageUrlPattern() {
-        return advertPageUrlPattern;
-    }
 }

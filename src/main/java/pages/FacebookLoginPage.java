@@ -21,6 +21,10 @@ public class FacebookLoginPage extends ActionsSetup {
     }
 
     public static WebElement loginBtn() {
-        return getElement(" //button[@id='loginbutton']", DELAY, XPATH);
+        return getElement("//button[@id='loginbutton']", DELAY, XPATH);
+    }
+
+    public static WebElement facebookBtn() {
+        return getElement("div.olxCucumber.steps-box:nth-child(2) > div:nth-child(1) > ul:nth-child(2) > li:nth-child(1) > div:nth-child(1) > form:nth-child(1) > a:nth-child(1)", DELAY, CSS);
     }
 }
