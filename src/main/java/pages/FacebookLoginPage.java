@@ -21,6 +21,6 @@ public class FacebookLoginPage extends ActionsSetup {
     }
 
     public static WebElement loginBtn() {
-        return getElement(" //button[@id='loginbutton']", DELAY, XPATH);
+        return getElement("//button[@id='loginbutton']", DELAY, XPATH);
     }
 }

@@ -50,7 +50,7 @@ public class LoginTest extends TestConditions {
         pressLogInFacebook();
 
         if (LoginPageActions.ifLoginRequired() == true) {
-            LoginPageActions.loginOlxFacebook(FBLOGIN, FBPASSWORD);
+            LoginPageActions.logInOlxWithCorrectCredentials(FBLOGIN, FBPASSWORD);
         }
 
         Assert.assertTrue("Can't log in successfully", MyProfilePage.myProfileNewAdvTitle().isDisplayed());

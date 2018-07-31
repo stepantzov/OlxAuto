@@ -26,6 +26,6 @@ public class TestMaker {
     }
 
     public void testMyProfileSettingsPage() {
-        myProfileSettingsPageTest.MyProfileSettingsPageHeaderVerification();
+        myProfileSettingsPageTest.myProfileSettingsPageHeaderVerification();
     }
 }

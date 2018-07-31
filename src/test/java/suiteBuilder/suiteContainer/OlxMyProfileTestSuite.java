@@ -23,7 +23,7 @@ public class OlxMyProfileTestSuite extends LoginFunctionalityTest {
     public void executeScope() {
         long startTime = System.nanoTime();
         MyProfileSettingsPageTest myProfileSettingsPageTest = new MyProfileSettingsPageTest();
-        myProfileSettingsPageTest.MyProfileSettingsPageHeaderVerification();
+        myProfileSettingsPageTest.myProfileSettingsPageHeaderVerification();
         long endTime = System.nanoTime();
 
         executionDuration = TimeUnit.NANOSECONDS.toSeconds(endTime - startTime);

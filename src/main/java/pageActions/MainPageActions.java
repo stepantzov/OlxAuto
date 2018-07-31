@@ -7,10 +7,6 @@ import pages.MyProfilePage;
 public class MainPageActions extends MainPage {
     protected static WebDriver driver;
 
-    public String getMainPageUrlPattern() {
-        return mainPageUrlPattern;
-    }
-
     public MainPageActions(WebDriver driver) {
         this.driver = driver;
     }
@@ -56,8 +52,15 @@ public class MainPageActions extends MainPage {
         elementClick(myLocalizationSuggestion());
     }
 
-
     public void navigateHomePage() {
         elementClick(homePageLogo());
+    }
+
+    public boolean verifyMainPageOpened() {
+        return homePageLogo().isDisplayed();
+    }
+
+    public void openHomePage() {
+        driverInstance.navigate().to(URL);
     }
 }

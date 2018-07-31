@@ -1,8 +1,15 @@
 package pageActions;
 
+import org.openqa.selenium.WebDriver;
 import pages.LoginPage;
 
 public class LoginPageActions extends LoginPage {
+    protected static WebDriver driver;
+
+    public LoginPageActions(WebDriver driverInstance) {
+        this.driver = driver;
+    }
+
     public static void setLoginEnterField(String loginValue) {
         sendKeys(loginEnterFld(), loginValue);
     }
@@ -22,7 +29,7 @@ public class LoginPageActions extends LoginPage {
         pressLoginButton();
     }
 
-    public static void loginOlxFacebook(String logVal, String passVal) {
+    public static void logInOlxWithCorrectCredentials(String logVal, String passVal) {
         FacebookLoginPageActions.setFacebookLoginField(logVal);
         FacebookLoginPageActions.setFacebookPasswordField(passVal);
         FacebookLoginPageActions.pressFacebookLoginButton();
@@ -34,5 +41,13 @@ public class LoginPageActions extends LoginPage {
 
     public static boolean ifLoginRequired() {
         return ifLoginRequiredIndicator();
+    }
+
+    public boolean verifyFacebookButtonPresent() {
+        return facebookBtn().isDisplayed();
+    }
+
+    public void pressFacebookLoginButton() {
+        facebookBtn().click();
     }
 }

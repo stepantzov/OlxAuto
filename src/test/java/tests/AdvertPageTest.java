@@ -7,7 +7,6 @@ import org.junit.Test;
 import pageActions.AdvertPageActions;
 import pageActions.LoginPageActions;
 import pageActions.MainPageActions;
-
 import static pageActions.LoginPageActions.pressLogInFacebook;
 
 public class AdvertPageTest extends TestConditions {
@@ -22,7 +21,7 @@ public class AdvertPageTest extends TestConditions {
         pressLogInFacebook();
 
         if (LoginPageActions.ifLoginRequired() == true) {
-            LoginPageActions.loginOlxFacebook(FBLOGIN, FBPASSWORD);
+            LoginPageActions.logInOlxWithCorrectCredentials(FBLOGIN, FBPASSWORD);
         }
 
         mainPageActions.pressAddNewAdvertLnk();

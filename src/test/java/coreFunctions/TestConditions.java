@@ -4,6 +4,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 
 public class TestConditions extends DriverSetup {
+
     @BeforeClass
     public static void initializeTestBaseSetup() {
         try {
