@@ -57,7 +57,6 @@ public class MainPageActions extends MainPage {
     }
 
     public boolean verifyIfMainPageOpened() {
-
         return homePageLogo().isDisplayed();
     }
 
